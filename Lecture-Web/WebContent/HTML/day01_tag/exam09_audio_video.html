@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- HTML5 이전버전
+		음악
+	<embed src="playlist/Kalimba.mp3" />
+	<br>
+		영상
+	<embed src="playlist/movie.mp4" />
+	<br>
+		object 태그로도 음악이나 비디오를 첨부할 수 있었음
+	<object data="playlist/movie.mp4"></object>
+	<object data="playlist/Kalimba.mp3"></object>
+ 	-->
+
+
+
+	<!-- HTML5 버전의 영상, 비디오 - controls(컨트롤바), autoplay(자동실행) -->
+	<audio src="playlist/Kalimba.mp3" controls="controls" autoplay="autoplay"></audio>
+	<br>
+	<br>
+	<video controls="controls" autoplay="autoplay" loop="loop" width="500" height="300">
+		<!-- source태그로 따로 src대신 사용가능 -->
+		<source src="playlist/movie.mp4">
+	</video>
+
+
+
+</body>
+</html>

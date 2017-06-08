@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON - JavaScript Object Notation</title>
+
+<script>
+	/*
+	JSON.stringify(); - 자바스크립트의 객체값을 문자열로 변환한다.
+	JSON.parse();     - 문자열을 자바스크립트 객체값으로 변환한다.
+	 */
+
+	var person = {
+		"name" : "hong",
+		"phone" : "010-2222-3333",
+		"address" : "서울 강남"
+	};
+
+	// person을 문자열로 변환
+	var str = JSON.stringify(person);
+	// 문자열을 person으로 변환
+	var p1 = JSON.parse(str);
+
+	document.write("name : " + p1.name + "<br> phone : " + p1.phone
+			+ "<br> address : " + p1.address);
+
+	// 일반 문자열을 JSON처럼 쓰고 싶으면 \"으로 문자열을 감싸야 함..
+	var strPerson = "{\"name\" : \"홍길동\", \"age\" : 25}";
+	var p2 = JSON.parse(strPerson);
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+
+		// 키를 누를때마다
+		$('input').keydown(function() {
+			$(this).css('color', 'orange');
+		});
+		// 키에서 손을 뗄 때마다
+		$('input').keyup(function() {
+			$(this).css('color', 'black');
+		});
+
+		// 포커싱 되었을 때
+		$('input').focus(function() {
+			$(this).css('background-color', 'white');
+		});
+		// 포커싱 되지 않은경우
+		$('input').blur(function() {
+			$(this).css('background-color', 'lightgray');
+		});
+
+	});
+</script>
+<style>
+input {
+	background-color: lightgray;
+}
+</style>
+</head>
+<body>
+
+	이름:
+	<input type="text" size="30">
+	<br> 전화번호 :
+	<input type="text" size="30">
+	<br>
+
+</body>
+</html>

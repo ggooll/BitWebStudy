@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		var idTd = document.querySelector('#id');
+		var pwTd = document.getElementById('pw');
+
+		// 해당 노드의 remove() 호출
+		idTd.remove();
+
+		// 아이디의 부모에서 자식을 다시지움,...
+		pwTd.parentNode.removeChild(pwTd);
+	}
+</script>
+
+</head>
+<body>
+	<table style="width:100px; height:100px" border=1>
+		<tr>
+			<td id="id">ID</td>
+		</tr>
+		<tr>
+			<td id="pw">PASSWORD</td>
+		</tr>
+	</table>
+</body>
+</html>

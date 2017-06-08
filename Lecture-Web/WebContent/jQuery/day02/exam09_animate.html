@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#square').animate({
+			'width' : '+=200px',
+			'height' : '200px'
+		});
+
+		$('#square').animate({
+			'width' : 'toggle',
+			'height' : 'toggle',
+
+			'left' : '300px',
+			'top' : '400px',
+			'opacity' : '0.5'
+		});
+
+		$('#square').animate({
+			'width' : 'toggle',
+			'height' : 'toggle'
+		});
+		
+		// 토글은 hide, show에만..
+		$('#square').toggle(500);
+		$('#square').toggle(500);
+
+	});
+</script>
+
+<style>
+#square {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: relative;
+}
+</style>
+
+</head>
+<body>
+	<div id="square"></div>
+</body>
+</html>

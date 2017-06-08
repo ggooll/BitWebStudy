@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 화면구성</title>
+</head>
+<body>
+
+	<!-- 
+	HTML5에 새로 추가된 태그 
+
+	<header>사이트명, 로고를포함한 영역</header>
+	<footer>사이트의 정보, 회사정보, 저작권 등</footer>
+	<nav>사이트 메뉴 포함</nav>
+	<section>문서의 내용부</section>
+	<article>문서의 내용이 많은경우</article>
+	<aside>사이드 메뉴</aside>
+	<strong> 굵게 </strong>
+	<mark> 하이라이트 표시 </mark>
+	<address> i + br </address>
+	-->
+
+	<header id="header">
+		<h1>비트 대학교 학과정보</h1>
+		<nav>
+			<ul>
+				<li><a href="#korean">국어국문학과</a></li>
+				<li><a href="#japanese">일어일문학과</a></li>
+				<li><a href="#chinese">중어중문학과</a></li>
+				<li><a href="#english">영어영문학과</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section id="container">
+		<article id="korean" style="height: 500px; border: 2px solid">
+			<h3>국어국문학과</h3>
+			<p>
+				안녕하세요 <span style="background-color: yellow"><b>국어국문학과</b></span>입니다.
+			</p>
+		</article>
+		<article id="japanese" style="height: 500px; border: 2px solid">
+			<h3>일어일문학과</h3>
+			<p>
+				안녕하세요 <mark style="background-color:pink"><strong>일어일문학과</strong></mark>입니다.
+			</p>
+		</article>
+		<article id="chinese" style="height: 500px; border: 2px solid">
+			<h3>중어중문학과</h3>
+			<p>
+				안녕하세요 <span style="background-color: aqua"><b>중어중문학과</b></span>입니다.
+			</p>
+		</article>
+		<article id="english" style="height: 500px; border: 2px solid">
+			<h3>영어영문학과</h3>
+			<p>
+				안녕하세요 <mark style="background-color: orange"><strong>영어영문학과</strong></mark>입니다.
+			</p>
+		</article>
+	</section>
+
+	<footer id="footer">
+		<address>주소 : 서울시 서초구 서초동 비트빌 3층 비트 대학교 &nbsp; &nbsp;</address>
+		<i>전화번호 : 02-3486-1234 &nbsp; &nbsp;</i>
+	</footer>
+
+</body>
+</html>

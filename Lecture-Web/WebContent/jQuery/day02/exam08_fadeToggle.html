@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		// div는 right-bottom에서 left-top으로 작아짐
+		$('#square').hide(500);
+		$('#square').show(500);
+		
+		// 지가알아서 show이면 보여주고, 아니면 숨김
+		$('#square').toggle(500);
+		$('#square').toggle(500);
+		
+		// 투명도와 관련된 fadeIn - Out
+		$('#square').fadeOut(500);
+		$('#square').fadeIn(500);
+		
+		// 지가알아서 fadeIn이면 Out으로, Out이면 in으로
+		$('#square').fadeToggle(500);
+		$('#square').fadeToggle(500);
+		
+		// 투명도를 지정할 수 있음 (1과 0사이의)
+		$('#square').fadeTo(500, 0.5);
+	});
+</script>
+
+<style>
+#square {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+</style>
+
+</head>
+<body>
+	<div id="square"></div>
+</body>
+</html>

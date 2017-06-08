@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+#first {
+	display: none;
+}
+</style>
+
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(function() {
+		// 3초에 걸쳐 h1문장을 띄운 후 complete라는 메시지를 띄우고싶다.
+		// $('#firsth1').slideDown(3000);
+		// alert('complete');
+		// alert가 먼저뜨고 h1이 보이게 된다.
+
+		// 수행순서를 위해 콜백함수를 사용
+		// slideDown을 모두 수행하고 나면 callback함수를 수행 (API에 [complete와 같은형태로])
+		// $('#first').slideDown(3000, function(){
+		// 	alert('complete');
+		// });
+
+		
+/*		
+		// 3초동안 첫번째 문장이라고 보인 후, 글자색을 파란색으로 변경한 후
+		// 슬라이드 효과로 올라갔다 내려갔다를 수행한 후 배경색을 노란색으로 변경
+		
+ 		$('#first').show(3000, function() {
+			$(this).css({
+				'color' : 'blue'
+			});
+			$(this).slideToggle(1000);
+			$(this).slideToggle(1000, function() {
+				$(this).css({
+					'background-color' : 'yellow'
+				});
+			});
+		});
+*/
+
+
+		// css, slideToggle 등은 모두 자기자신을 리턴하기때문에 chaining이 가능하다
+		$('#first').show(3000, function() {
+			$(this).css('color', 'blue').slideToggle(1000).slideToggle(1000, function(){
+				$(this).css({
+					'background-color' : 'yellow'
+				});
+			})
+		});
+		
+	});
+</script>
+
+
+</head>
+<body>
+	<h1 id="first">첫번째 문장</h1>
+</body>
+</html>

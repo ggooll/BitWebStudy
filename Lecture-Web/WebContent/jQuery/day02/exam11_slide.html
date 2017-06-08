@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$('#menu').mouseenter(function() {
+			//$('#submenu').show(500);
+			//$('#submenu').fadeIn(500);
+			//$('#submenu').slideDown(500);
+			$('#submenu').slideToggle(500);
+		});
+
+		$('#menu').mouseleave(function() {
+			//$('#submenu').hide(500);
+			//$('#submenu').fadeOut(500);
+			//$('#submenu').slideUp(500);
+			$('#submenu').slideToggle(500);
+		});
+	});
+</script>
+
+<style>
+#menu {
+	height: 50px;
+	background: pink;
+}
+
+#submenu {
+	height: 100px;
+	background: yellow;
+	padding: 10px;
+	display: none;
+}
+</style>
+
+</head>
+
+<body>
+	<div id="menu">마우스를 접근시켜보세요</div>
+	<div id="submenu">메뉴화면입니다.</div>
+</body>
+</html>

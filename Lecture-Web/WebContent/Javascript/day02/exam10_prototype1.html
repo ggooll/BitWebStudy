@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>생성자 만들기(new)와 프로토타입</title>
+<script>
+	// new 키워드를 사용하여 생성할 수 있다.
+	// this를 사용하여 이미 객체로 인식, = 으로 대입
+	function Person(name, phone, address) {
+		this.name = name;
+		this.phone = phone;
+		this.address = address;
+	}
+
+	// 공유해도 되는 함수는 따로 프로토타입에 정의해두고 참조
+	Person.prototype.info = function() {
+		for ( var key in this) {
+			if (key != 'info')
+				console.log(key + " : " + this[key] + "\n");
+		}
+	};
+	// 생성은 다음과 같이 한다.
+	var person1 = new Person('홍길동', '012-2222-3333', '서울특별시 서초구');
+	var person2 = new Person();
+
+	var p = new Person("백길동", "010-8888-9999", "경기도 성남시 분당구");
+	p.info();
+
+	// 프로토타입의 info 함수를 변경 후
+	Person.prototype.info = function() {
+		alert('change..');
+	};
+
+	// 새로운 객체를 생성하여 테스트
+	var p2 = new Person('박길동', '010-7777-7777', '서울시 강남구');
+	p2.info();
+
+	// 이전에 객체들도 프로토타입이 변하여 원래 info를 가지지 않음 -> 공유영역이기 때문
+	p.info();
+</script>
+</head>
+<body>
+
+
+</body>
+</html>
+

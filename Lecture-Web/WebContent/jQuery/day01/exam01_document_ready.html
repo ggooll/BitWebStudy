@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<!-- 절대경로! -->
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script src="/Lecture-Web/jQuery/js/jQuery.js"></script>
+
+<!-- CDN (구글, 마소, 공홈.. 등등 가져다 쓸수있다) -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<!-- <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+
+<!-- 최신버전을 가져온다고 하지만.. 1.11.1버전이 나옴 -->
+<!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+
+<script>
+	// jquery의 시작은 $!
+	// document가 ready되면 수행할 일을 명시 == window.onload
+	$(document).ready(function() {
+		alert('ready11');
+	});
+
+	// window.onload와 다르게 여러번 가능, 순서는 다르게
+	$(document).ready(function() {
+		alert('ready22');
+	});
+
+	// 이 형태는 document.ready와 같다.
+	$(function() {
+		alert('ready33');
+	});
+</script>
+</head>
+
+<body>
+	<input type="button" value="눌러" onclick="aaa()" />
+</body>
+</html>

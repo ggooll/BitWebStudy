@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Body의 특정 태그만 읽기, eval</title>
+
+<script>
+	window.onload = function() {
+		// id에 의한 요소 하나 접근
+		var header1 = document.getElementById("header1");
+		// alert(header1.innerHTML);
+		// alert(header1.innerText);
+	}
+
+	// 문자열이 자바스크립트의 명령어(문법)라면, 실행할 수 있게 -> eval(str);
+	var str = 'alert("Hello"); var number = 10; alert(number);';
+	str += "var arrays = [10, 'A', 12.34, true];";
+	str += 'alert("배열의 요소개수 : " + arrays.length)';
+	eval(str);
+</script>
+
+</head>
+<body>
+	<h1 id="header1">
+		<a href="">Header1</a>
+	</h1>
+	<h1>Header2</h1>
+</body>
+</html>

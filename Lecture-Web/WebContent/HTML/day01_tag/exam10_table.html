@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Table</title>
+</head>
+<body>
+
+	<h2 align="center"> 가운데 정렬 (align, margin 0 auto)</h2>
+	<div>
+		<table border="1" style="margin: 0 auto">
+			<tr>
+				<td>1-1</td>
+				<td>1-2</td>
+			</tr>
+			<tr>
+				<td>2-1</td>
+				<td>2-2</td>
+			</tr>
+		</table>
+	</div>
+
+	<br>
+	<br>
+
+	<h2 align="center"> 테이블은 가장 마지막에 설정된 td값을 따른다 </h2>
+	<div align="center">
+		<table border="1" style="width: 500px; height: 500px">
+			<tr>
+				<td>내용에 따라 자동으로 크기가 변한다</td>
+				<td width="200px">1-2</td>
+			</tr>
+			<tr>
+				<td>2-1</td>
+				<td width="300px">2-2</td>
+			</tr>
+		</table>
+	</div>
+
+	<br>
+	<br>
+
+	<h2 align="center"> colspan, rowspan </h2>
+	<div>
+		<table border="1" style="margin: 0 auto; width: 500px; height: 500px">
+			<tr>
+				<td rowspan="2">1-1</td>
+				<td colspan="2">1-2</td>
+			</tr>
+			<tr>
+				<td>2-1</td>
+				<td>2-2</td>
+			</tr>
+		</table>
+	</div>
+
+	<br>
+	<br>
+
+
+	<h2 align="center"> 3 x 3짜리에서 합치기 </h2>
+	<div>
+		<table border="1" style="margin: 0 auto; width: 500px; height: 500px">
+			<tr>
+				<td colspan="2">1</td>
+				<td rowspan="2">2</td>
+			</tr>
+			<tr>
+				<td rowspan="2">3</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td colspan="2">5</td>
+			</tr>
+		</table>
+	</div>
+
+
+
+
+</body>
+</html>

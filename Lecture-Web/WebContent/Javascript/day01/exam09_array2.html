@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>array s2</title>
+<script>
+	// 배열은 new 생성자를 사용하여 만들 수도 있음 ~
+	var arrays = new Array(100, 'Hello', 23.456);
+	document.write('array의 길이 : ' + arrays.length + "<br>");
+	for (var i = 0; i < arrays.length; i++) {
+		document.write('array ' + i + ' : ' + arrays[i] + "<br>");
+	}
+	document.write('<br>');
+
+	// for 문 사용
+	var names = new Array('이길동', '홍길동', '박길동', '최길동', '한길동');
+	for (var i = 0; i < names.length; i++) {
+		document.write(names[i] + "<br>");
+	}
+	document.write('<br>');
+
+	// 인덱스 접근
+	for ( var i in names) {
+		document.write(names[i] + "<br>");
+	}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

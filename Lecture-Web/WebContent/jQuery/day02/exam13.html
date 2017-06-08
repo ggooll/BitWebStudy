@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		/* 		var pTags = document.getElementsByTagName('p');
+		 var html = pTags[0].innerHTML;
+		 var text = pTags[1].innerText;
+		
+		 alert("추출된 html : " + html + "\n추출된 text : " + text + "\n");
+		
+		 var pTags = document.querySelectorAll('p');
+		 console.log(pTags[0].innerText);
+		 console.log(pTags[1].innerText); */
+	});
+
+	// jQuery를 이용하여 추출해보기
+	// 태그로도 접근이 가능하나, html()의경우 맨 첫태그만 긁어오고, text()의경우 전체를 모두 긁는다.
+	$(document).ready(function() {
+		var html = $('#p2').html();
+		console.log(html);
+
+		var text = $('#p2').text();
+		console.log(text);
+
+		// jQuery에서 속성값을 가져오는 함수
+		// var href = document.querySelector('a').getAttribute('href');
+		var href = $('a').attr('href');
+		console.log(href);
+	});
+
+	// button을 누르면, input값을 alert로 띄워주도록
+	$(document).ready(function() {
+		$(':button').click(function() {
+			alert($('#name').val());
+		});
+	});
+</script>
+
+</head>
+<body>
+
+	<p id="p1">
+		내 이름은 <b>홍길동</b>이고, 별명은 <i>의적</i>입니다.
+	</p>
+	<p id="p2">
+		내 이름은 <b>홍길순</b>이고, 별명은 <i>의적2</i>입니다.
+	</p>
+
+	<a href="http://www.naver.com">네이버</a>
+
+	<br> 이름 :
+	<input type="text" size="15" id="name" />
+	<button>입력완료</button>
+
+</body>
+</html>
+

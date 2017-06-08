@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 생성</title>
+
+<script>
+	function makePerson(name, phone, address) {
+		var person = {
+			"name" : name,
+			"phone" : phone,
+			"address" : address,
+
+			"info" : function() {
+				for ( var key in this) {
+					if (key != 'info')
+						console.log(key + " : " + this[key] + "\n");
+				}
+			}
+		};
+		return person;
+	}
+
+	var person1 = makePerson('홍길동', '012-2222-3333', '서울특별시 서초구');
+	var person2 = makePerson('강길동', '010-4444-3555', '서울특별시 광진구');
+	var person3 = makePerson('백길동', '010-2662-8745', '서울특별시 중랑구');
+
+	var persons = [];
+	persons.push(person1);
+	persons.push(person2);
+	persons.push(person3);
+
+	for ( var i in persons) {
+		persons[i].info();
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

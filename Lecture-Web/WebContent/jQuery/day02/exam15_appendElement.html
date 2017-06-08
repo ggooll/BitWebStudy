@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		// 버튼이 클릭되면 h1 문장을 추가하고 싶다.
+		i = 3;
+		$("#btn01").click(function(){
+			$('div').append('<h1>' + i++ + '번째 문장</h1>');
+		});
+		
+		// ol은 알아서 번호가 붙음
+		$("#btn02").click(function(){
+			// append = 뒤쪽에 붙는다.
+			//$('ol').append('<li>분홍</li>');
+			// prepend = 앞쪽에 붙는다.
+			$('ol').prepend('<li>분홍</li>');
+		});
+		
+		
+		$("#btn03").click(function(){
+/* 			$('body').prepend("<h3>추가된 문장</h3>");
+			$('body').prepend("<h3>또 추가된 문장</h3>");
+			$('body').prepend("<h3>또 또 추가된 문장</h3>"); // <-- 가장 앞쪽에 추가됨 
+*/
+
+			// append및 prepend할때 , ,로 넣을 수 있으며, 이때는 순서대로 추가된다.
+			$('body').prepend('<h4>추가된 문장</h4>', "<h4>또 추가된 문장</h4>", "<h4>또 또 추가된 문장</h4>");
+//			$('body').append('<h4>추가된 문장</h4>', "<h4>또 추가된 문장</h4>", "<h4>또 또 추가된 문장</h4>");
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<h1> 1번째 문장 </h1>
+		<h1> 2번째 문장 </h1>
+	</div>
+	
+	<h2>색상표</h2>
+	<ol>
+		<li>빨강</li>
+		<li>노랑</li>
+		<li>초록</li>
+		<li>파랑</li>
+		<li>보라</li>
+	</ol>
+	
+	<button id="btn01">문장추가</button>
+	<button id="btn02">색상추가</button>
+	<button id="btn03">본문추가</button>
+	
+</body>
+</html>

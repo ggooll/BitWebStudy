@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+	function checkFilled() {
+		var form = document.searchForm;
+		var searchType = form.searchType;
+		var searchWord = form.searchWord;
+
+		/*
+			// value가 "" 이므로
+			if (searchType.value.length == 0) {
+				alert('검색옵션을 선택하세요');
+				form.reset();
+				return false;
+			}
+		 */
+
+		// 선택하세요가 0번 인덱스이므로
+		var selectIdx = searchType.selectedIndex;
+		if (selectIdx == 0) {
+			alert('검색옵션을 선택하세요');
+			searchType.focus();
+			return false;
+		}
+
+		var words = [ ' ', '제목', '작성자' ];
+		if (searchWord.value == "") {
+			alert('검색할 ' + words[selectIdx] + '을(를) 입력하세요');
+			searchWord.focus();
+			return false;
+		}
+
+		if (searchWord.value.length < 2) {
+			alert('검색어는 2글자 이상 입력해주세요.');
+			searchWord.focus();
+			return false;
+		}
+
+		return true;
+	}
+</script>
+
+</head>
+<body>
+	<form action="" onsubmit="return checkFilled()" name="searchForm">
+		<!-- form에서 searchType=title과 같은형태로 날아간다 -->
+		<select name="searchType">
+			<option value="">선택하세요</option>
+			<option value="title">제목</option>
+			<option value="writer">작성자</option>
+		</select> 
+		<!-- form에서 searchWord=입력값 과 같은형태로 날아간다 -->
+		<input type="text" size="15" name="searchWord"> 
+		<input type="submit" value="검 색">
+	</form>
+</body>
+</html>

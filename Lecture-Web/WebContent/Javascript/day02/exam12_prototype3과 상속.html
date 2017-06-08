@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prototype과 상속</title>
+
+<script>
+	function Person(name, phone, addr) {
+		this.name = name;
+		this.phone = phone;
+		this.addr = addr;
+	}
+
+	// 프로토타입은 변수도가질 수 있다.
+	Person.prototype.hobby = "영화감상";
+
+	Person.prototype.info = function() {
+		for ( var key in this) {
+			if (key != 'info')
+				console.log(key + " : " + this[key] + "\n");
+		}
+	};
+
+	// Person을 상속받을 Doctor 정의
+	function Doctor(name, phone, addr, major) {
+		// 상속인척 #1
+		// base로 내 부모를 명시 후(생성자 함수명.,.,) 부모의 생성자를 호출.,.
+		// this.base = Person;
+		// this.base(name, phone, addr);
+
+		// 상속인척 #2
+		// Person이라는 함수를 call(호출) 하겠다. this에 만들어지게
+		// Person.call(this, name, phone, addr);
+
+		// 상속인척 #3 
+		// 앞에서부터 부모의 n개만 드가게끔(순서..)
+		Person.apply(this, arguments);
+
+		this.major = major;
+	}
+	// 상속받고자 하는 클래스의 프로토타입을 복사(?);
+	// 생성자 함수까지 복사가 됨
+	Doctor.prototype = Person.prototype;
+
+	var doctor = new Doctor("백길동", "010-8888-9999", "경기도 성남시 분당구", '신경외과');
+	// prototype을 복사하면 상속처럼 instanceof로 확인함
+	alert(doctor instanceof Person);
+
+	doctor.info();
+	console.log(doctor.name);
+</script>
+</head>
+<body>
+
+</body>
+</html>

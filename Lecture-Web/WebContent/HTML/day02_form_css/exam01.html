@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- submit을 누르면 action으로 이동 -->
+	<!-- form안에 데이터를가지고 다른페이지로 이동 -->
+	<form action="http://www.naver.com" method="get">
+	
+		아이디 : <input type="text" size="20" maxlength="20"/><br>
+		패스워드 : <input type="password" size="16" maxlength="16"><br>
+		이름 : <input type="text" size="10" maxlength="10"><br>
+		<br>
+		
+		<!-- radio button 같은name이 한 그룹으로 묶인다 -->
+		<strong>희망연봉</strong><br>
+		<input type="radio" name="salary"/>2200-2400<br>
+		<input type="radio" name="salary"/>2400-2600<br>
+		<input type="radio" name="salary"/>2600-2800<br>
+		<input type="radio" name="salary"/>2800-3000<br>
+		<input type="radio" name="salary"/>3000-3200<br>
+		<br>
+
+		<!-- checkbox 역시 같은name이 한 그룹으로 묶인다 -->
+		<strong>사용가능언어(중복선택가능)</strong><br>
+		<input type="checkbox" name="lang"/>C언어<br>
+		<input type="checkbox" name="lang"/>C++<br>
+		<input type="checkbox" name="lang"/>Java<br>
+		<input type="checkbox" name="lang"/>JavaScript<br>
+		<input type="checkbox" name="lang"/>JSP<br>
+		<input type="checkbox" name="lang"/>C#<br>
+		<input type="checkbox" name="lang"/>ASP<br>
+		<br>
+		
+		<strong>취미선택(중복선택가능)</strong><br>
+		<input type="checkbox" name="hobby"/>코딩<br>
+		<input type="checkbox" name="hobby"/>디버깅<br>
+		<input type="checkbox" name="hobby"/>테스트<br>
+		<input type="checkbox" name="hobby"/>로그분석<br>
+		<input type="checkbox" name="hobby"/>DB<br>
+		<br>
+
+		<!-- textarea -->
+		<strong>자기소개</strong><br>
+		<textarea rows="15" cols="100">이미들어가있는 텍스트</textarea>
+		<br><br>
+
+		<!-- 파일첨부 -->
+		<strong>파일첨부</strong><br>
+		<input type="file">
+		<br><br>
+		
+		<!-- submit, value(버튼값) -->
+		<input type="submit" value="전송"><br>
+
+	</form>
+</body>
+</html>

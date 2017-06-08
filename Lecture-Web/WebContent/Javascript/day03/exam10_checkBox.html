@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	// 어떤 체크박스가 선택되었는지 보고싶다.
+	function showResults() {
+		var checkedList = "";
+		var hobbyCheckBox = document.inputForm.hobby;
+		
+		for (var i = 0; i < hobbyCheckBox.length; i++) {
+			if (hobbyCheckBox[i].checked) {
+				checkedList += hobbyCheckBox[i].value + "\n";
+			}
+		}
+		alert(checkedList);
+	}
+
+	/*
+	// 모두 체크, 해제
+ 	function toggle(check){
+		var hobbyCheckBox = document.inputForm.hobby;
+		for (var i = 0; i < hobbyCheckBox.length; i++) {
+			hobbyCheckBox[i].checked = check;
+		}
+	}
+	 */
+
+	function toggle() {
+		var cnt = 0;
+		var hobbyCheckBox = document.inputForm.hobby;
+		for (var i = 0; i < hobbyCheckBox.length; i++) {
+			if (hobbyCheckBox[i].checked) {
+				cnt++;
+			}
+		}
+
+		var isChecked = true;
+		if (cnt > 0) {
+			isChecked = false;
+		}
+
+		for (var i = 0; i < hobbyCheckBox.length; i++) {
+			hobbyCheckBox[i].checked = isChecked;
+		}
+	}
+</script>
+
+</head>
+<body>
+
+	<form action="" name="inputForm">
+		당신의 취미는?<br>
+		<!-- checkbox는 value값이 없다.(on과 off뿐) -->
+		<!-- value값을 주게되면 (hobby = music & hobby = movie)와 같은형태로 날아감 -->
+		<input type="checkbox" name="hobby" value="music" /> 음악감상 <br>
+		<input type="checkbox" name="hobby" value="movie" /> 영화감상 <br>
+		<input type="checkbox" name="hobby" value="reading" /> 독 서 <br>
+		<input type="checkbox" name="hobby" value="game" /> 게 임 <br>
+<!-- 		<input type="button" value="전체선택" onclick="toggle(true)" />
+		<input type="button" value="선택해제" onclick="toggle(false)"/> -->
+		
+		<input type="button" value="전체선택/해제" onclick="toggle()" />
+		
+		<input type="button" value="결과보기" onclick="showResults()" />
+	</form>
+
+</body>
+</html>

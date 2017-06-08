@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>동적인 태그 생성</title>
+
+<script>
+	// createElement (태그명으로 엘리먼트를 생성한다)
+	// 태그를 만들어 body에 붙인다.
+	window.onload = function() {
+		// h1태그 붙이기
+		var h1Tag = document.createElement('h1');
+		var text_node = document.createTextNode("Hello");
+		h1Tag.appendChild(text_node);
+		document.body.appendChild(h1Tag);
+
+/* 		
+		// 이미지 태그 붙이기, 이미지태그는 속성만 정의하면 된다.
+		var imgTag = document.createElement('img');
+		imgTag.setAttribute('src',
+				'http://static.naver.com/weather/images/bi_naver.gif');
+		imgTag.addEventListener("click", function() {
+			window.open("http://www.naver.com", "", "width=1000, height=1000");
+		});
+		document.body.appendChild(imgTag);
+*/
+
+		
+		// a태그에 이미지를 넣어서 붙이기 (클릭 시 이동)
+		var aTag = document.createElement('a');
+		aTag.setAttribute('href', 'http://www.naver.com');
+		aTag.setAttribute('target', '_blank');
+		var imgTag2 = document.createElement('img');
+		imgTag2.setAttribute('src',
+				'http://static.naver.com/weather/images/bi_naver.gif');
+
+		aTag.appendChild(imgTag2);
+		document.body.appendChild(aTag);
+	
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

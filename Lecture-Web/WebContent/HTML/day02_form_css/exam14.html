@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+/* h1 중 첫번째 요소 */
+h1:first-of-type {
+	color: green;
+}
+
+/* h1 중 마지막 요소 */
+h1:last-of-type {
+	color: orange;
+}
+
+/* 첫 글자 */
+p::first-letter{
+	font-size: 3em;
+}
+
+/* 첫 줄에 대해 */
+p::FIRST-LINE{
+	text-decoration: underline;
+}
+
+/* 마우스 드래그 선택시 색깔 */
+p::selection{
+	background-color: yellow;
+}
+
+</style>
+</head>
+<body>
+
+	<p>ABCDEFGHIJKLMN<br>OPQRSTUVWXYZ</p>
+	<p>adfasfaseraxxa<br>as3rassxzwez<br>9832rilksmdd</p>
+
+	<h1>1111111</h1>
+	<h1>2222222</h1>
+	<h1>3333333</h1>
+	<h1>4444444</h1>
+	<h1>5555555</h1>
+	<h1>6666666</h1>
+	<h1>7777777</h1>
+
+</body>
+</html>

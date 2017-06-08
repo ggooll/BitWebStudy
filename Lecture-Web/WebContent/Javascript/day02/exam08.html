@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>script의 객체 {} 만들기</title>
+
+<script>
+	// 1회용... 객체생성 
+	var person = {
+		"name" : "홍길동",
+		"phone" : "010-0000-0000",
+		"address" : "서울시 서초구 서초동",
+		"info" : function() {
+			/*
+			 본인의 객체안에서도 this.을 무조건 명시해야하기 때문에 
+			 with(this)와 같이 블럭을 만들어 사용할 수 있다. 
+			
+			 with (this) {
+			 var str = name + "\n" + phone + "\n" + address;
+			 console.log(str);
+			 }		
+			 */
+
+			// 배열의 모든 요소를 접근할때 다음과같이 가능하다.
+			for ( var key in this) {
+				console.log(key + " : " + this[key] + "\n");
+			}
+		},
+	};
+	person.info();
+
+	// 갑자기 추가 가능...
+	person.age = 15;
+	person.info();
+
+	// person.age 는 person["age"]와 같음
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

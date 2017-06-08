@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>시간과 if else, switch</title>
+<script>
+	var d = new Date();
+	// d.get~~~
+
+	var hour = d.getHours();
+	if (hour < 12) {
+		alert("오전시간입니다.")
+	} else if (hour < 16) {
+		alert("오후시간입니다")
+	} else {
+		alert("저녁시간입니다.")
+	}
+
+	var num = prompt("숫자를 입력하세요");
+	num = Number(num);
+	alert(typeof num);
+
+	switch (num % 2) {
+	case 0:
+		alert(num + '은 짝수입니다');
+		break;
+
+	case 1:
+		alert(num + '은 홀수입니다');
+		break;
+	}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

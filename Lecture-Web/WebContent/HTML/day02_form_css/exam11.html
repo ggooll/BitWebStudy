@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+#header {
+	color: orange;
+}
+
+/* 바로 아래 자식들만 > (자손X) */
+#header>h1 {
+	color: maroon;
+}
+
+/* #header의 자손들중 h2인 모든것 */
+#header h2 {
+	color: red;
+}
+
+#header h3 {
+	color: fuchsia;
+}
+
+#section {
+	color: green;
+}
+</style>
+
+
+</head>
+<body>
+
+	<div id="header">
+		<h1>내가 제목이다</h1>
+		<div id="sub_header">
+			<h1>내가 소제목이다</h1>
+			<h3>내가 소제목2이다</h3>
+		</div>
+		<h2>내가 제목2이다</h2>
+		<h1>내가 제목3이다</h1>
+	</div>
+	<div id="section">
+		<h1>내가 본문이다</h1>
+		<h3>내가 본문이다</h3>
+	</div>
+
+
+
+
+
+</body>
+</html>

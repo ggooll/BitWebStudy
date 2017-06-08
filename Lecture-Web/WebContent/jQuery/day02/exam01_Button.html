@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		alert("ready");
+		// input태그중 type이 버튼인 것 - 버튼1만 지워짐
+		// $('input:button').hide();
+
+		// type이 버튼인것을 지웠을 때는 둘 다 지워진다.
+		// $(':button').hide();
+
+		// button태그를 명시할 때
+		// $('button').hide();
+
+		// 모든 버튼타입에 attribute를 부여할 때,
+		// $(':button').attr('onclick', 'clickBtn()');
+
+		// 버튼이 click되었을때 동작할 콜백함수 정의
+		$(':button').click(function() {
+			// 하고싶은 동작들
+			// alert("<<<");
+			// $('h1').slideUp();
+			// $(this).hide();
+		});
+
+	});
+
+	function clickBtn() {
+		alert(">>>");
+	}
+</script>
+
+</head>
+<body>
+
+	<h1>-------------------------------</h1>
+	<input type="button" value="버튼1">
+	<button>버튼2</button>
+	<h1>-------------------------------</h1>
+
+</body>
+</html>

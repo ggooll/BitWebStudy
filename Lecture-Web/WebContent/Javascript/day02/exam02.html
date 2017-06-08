@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	var autoCall = function() {
+		{
+			hobby = 11; // var 없이 window.hobby가 됨(전역변수)
+		}
+		var num = 22;
+		//alert('로드완료1');
+	}
+
+	window.onload = function() {
+		autoCall();
+		alert("로드완료2");
+		alert(hobby); // 접근 가능
+		alert(num);
+	}
+</script>
+</head>
+
+<!-- body태그를 모두 로드하고 나면 수행할 일(예전 방식) -->
+<!-- <body onload="autoCall();"> -->
+<body>
+
+	<h1>HI</h1>
+	<h1>Hello</h1>
+	<h1>HI</h1>
+
+</body>
+</html>

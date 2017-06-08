@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/* 너비가 300px인, 테두리색상이 빨간색인 사각형 */
+div {
+	width: 200px;
+	border: 10px solid green;
+	text-align: center;
+	padding: 10px;
+	margin: 20px;
+	float: left;
+}
+
+#radius {
+	/* 11시, 1시, 5시, 7시 */
+	border-radius: 0px 30px 0px 30px;
+}
+
+.square {
+	/* x축, y축, blur, 색상*/
+	box-shadow: 0px 0px 50px black;
+}
+
+.square2 {
+	/* x축, y축, blur, 색상*/
+	box-shadow: -10px 0px 50px maroon;
+}
+
+.square3 {
+	/* x축, y축, blur, 색상*/
+	box-shadow: 0px 10px 50px black;
+}
+
+.square4 {
+	/* x축, y축, blur, 색상*/
+	box-shadow: 10px 10px 50px maroon;
+}
+
+.square5 {
+	/* x축, y축, blur, 색상*/
+	box-shadow: inset 0px 0px 30px black;
+	clear: both;
+}
+
+.square6 {
+	/* x축, y축, blur, 색상*/
+	box-shadow: inset -10px 10px 30px black;
+}
+</style>
+</head>
+<body>
+
+	<div id="radius">Radius</div>
+	<div class="square">기본 음영</div>
+	<div class="square2">x축 -10음영</div>
+	<div class="square3">y축 10 음영</div>
+	<div class="square4">x 10 y 10 음영</div>
+	<div class="square5">안쪽 기본 음영</div>
+	<div class="square6">안쪽 x -10, y 10 음영</div>
+
+</body>
+</html>

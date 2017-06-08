@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(function() {
+		alert("ready");
+
+		// jQuery에서 CSS를 적용할 때 css(속성, 값) 함수
+		var oddStyle = {
+			'background' : 'orange',
+			'color' : 'purple'
+		};
+		var evenStyle = {
+			'background' : 'pink',
+			'color' : 'blue'
+		};
+		$('tr:odd').css(oddStyle);
+		$('tr:even').css(evenStyle);
+
+	});
+</script>
+</head>
+<body>
+
+	<h2>회원 명부</h2>
+
+	<table border="1">
+		<tr>
+			<!-- th 중간정렬, bold -->
+			<th>이름</th>
+			<th>전화번호</th>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-1111</td>
+		</tr>
+		<tr>
+			<td>강길동</td>
+			<td>010-2222-2222</td>
+		</tr>
+		<tr>
+			<td>박길동</td>
+			<td>010-3333-3333</td>
+		</tr>
+		<tr>
+			<td>한길동</td>
+			<td>010-4444-4444</td>
+		</tr>
+		<tr>
+			<td>전길동</td>
+			<td>010-5555-5555</td>
+		</tr>
+		<tr>
+			<td>김길동</td>
+			<td>010-6666-6666</td>
+		</tr>
+		<tr>
+			<td>임길동</td>
+			<td>010-7777-7777</td>
+		</tr>
+	</table>
+
+</body>
+</html>

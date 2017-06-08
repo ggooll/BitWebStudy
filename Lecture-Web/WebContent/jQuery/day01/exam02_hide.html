@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		alert('ready');
+
+		// style display를 none으로 만든다. 
+		// 이는 공간을 유지하고 안보여주는 것이 아닌, 공간을 해제함 (당겨짐)
+		// $('#h01').hide();
+
+		// h2태그중 클래스가 h01인 것 - 클래스는 유일한 태그가 아니므로
+		// $('h2.h01').hide();
+
+		// 모두지워라 ('*'), h1만 모두 지워라 ('h1')
+		// $('h1').hide();
+
+		// h1 태그중 가장 첫번째 것을 지워라
+		// $('h1:first').hide();
+
+		// h1 태그중 가장 마지막 것을 지워라
+		$('h1:last').hide();
+
+	});
+</script>
+
+</head>
+<body>
+
+	<h1 id="h01">Hello</h1>
+	<h1>HI</h1>
+	<h2 id="h02">안녕</h2>
+
+	<hr>
+
+	<h1 class="h01">Hello</h1>
+	<h1>HI</h1>
+	<h2 class="h01">안녕</h2>
+</body>
+</html>

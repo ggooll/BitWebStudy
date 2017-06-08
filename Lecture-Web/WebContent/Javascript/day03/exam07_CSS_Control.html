@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// 요소의 style으로 CSS를 제어할 수 있다.
+	window.onload = function() {
+		var idTd = document.querySelector('#id');
+		var pwTd = document.getElementById('pw');
+
+		// pwTd.style (css 접근)
+		pwTd.style.fontSize = '20pt';
+		pwTd.style.color = 'pink';
+		pwTd.style.border = '2px solid red';
+
+		// idTd.style
+		idTd.style.backgroundColor = 'black';
+		idTd.style.color = 'white';
+	}
+</script>
+
+</head>
+<body>
+	<table style="width:100px; height:100px" border=1>
+		<tr>
+			<td id="id">ID</td>
+		</tr>
+		<tr>
+			<td id="pw">PASSWORD</td>
+		</tr>
+	</table>
+</body>
+</html>

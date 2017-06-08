@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript의 자료형</title>
+
+<script>
+	// JavaScript는 object, number, string, boolean으로만
+	alert(typeof undefined);
+	alert(typeof null);
+	alert(typeof 12.34);
+	alert(typeof 123);
+	alert(typeof "Hello");
+	alert(typeof true);
+
+	var n = 10;
+	alert(typeof n);
+
+	// Casting (string -> number)
+	var numberStr = Number("1234");
+	alert(numberStr + " " + typeof numberStr);
+
+	// toString (number -> string)
+	var strNumber = numberStr.toString();
+	alert(strNumber + " " + typeof strNumber);
+</script>
+
+
+</head>
+<body>
+</body>
+</html>

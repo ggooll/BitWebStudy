@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+/* input태그 중 타입이 text인 것에 대해 */
+input[type=text] {
+	background: lime;
+}
+
+/* input태그 생략도 가능하다 */
+[type=password] {
+	background: aqua;
+}
+
+img {
+	width: 200px;
+	height: 200px;
+	border: 5px solid red;
+}
+
+/* 이미지 확장자에 따른... */
+[src$=png] {
+	border-color: green;
+}
+
+[src$=jpg] {
+	border-color: red;
+}
+
+[src$=gif] {
+	border-color: blue;
+}
+</style>
+</head>
+
+<body>
+
+	<form>
+		아이디: <input type="text" autofocus="autofocus" /><br> 패스워드: <input type="password" /><br>
+	</form>
+	<br>
+
+	<img src="images/aaa.png" />&nbsp;
+	<img src="images/back_image2.jpg" />&nbsp;
+	<img src="images/back2.gif" />&nbsp;
+
+</body>
+</html>

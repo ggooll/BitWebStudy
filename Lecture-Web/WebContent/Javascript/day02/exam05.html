@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>B O M</title>
+
+<script>
+	/* Browser object model
+		 최상위 : window 객체
+		 	- location 객체
+		 	- navigator 객체
+		 	- history 객체 
+		 	- screen 객체
+		 	- document 객체
+	*/
+	// 기본적으로 window객체의 것을 호출(alert, open, prompt.. 등등 모두 window 것)
+	var sub = window.open("", "", "width=1000, height=600");
+	// sub는 새로 띄워진 창 객체가 된다.
+	if (!sub) {
+		alert('팝업창 옵션을 확인하세요');
+	}
+
+	// 새 창의 시작 위치 (moveTo -> 이동하라)
+	sub.moveTo(150, 150);
+	setInterval(function() {
+		sub.moveBy(10, 10);
+	}, 1000);
+
+	//sub.close();
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

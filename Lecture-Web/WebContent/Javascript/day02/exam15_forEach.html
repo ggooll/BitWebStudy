@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forEach</title>
+
+<script>
+	var nums = [ 10, 20, 30, 40, 50 ];
+	// 0번째 변수는 10
+	// 1번째 변수는 20...
+	
+	for ( var i in nums) {
+		document.write(i + "번째 변수는 " + nums[i] + "<br>");
+	}
+	document.write("<br>");
+
+	// forEach - 새로 추가된,..
+	nums.forEach(function(element, index, nums) {
+		document.write(index + "번째 변수는 " + element + "<br>");
+	});
+	document.write("<br>");
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

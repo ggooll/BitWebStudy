@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	// 이벤트 핸들러가 발생할 수 있는 동작들
+	// 1. 마우스 (click, double click, mouseenter, mouseleave)
+	// 2. 키보드 (keydown, keyup, keypress)
+	// 3. form (submit, blur, focus)
+	// 4. document/Window객체 (load, unload, resize, scroll)
+
+	$(document).ready(function() {
+		// onlick, onmouseenter, onmouseleave에 대해서
+		// 한번에 각각을 정의할 수 있다. (function아님, 자바스크립트 object 형태로 정의)
+		$('h1').on({
+			'click' : function() {
+				$(this).css({
+					'color' : 'orange',
+					'background-color' : 'green'
+				});
+			},
+
+			'mouseenter' : function() {
+				$(this).css('background-color', 'pink');
+			},
+
+			'mouseleave' : function() {
+				$(this).css('background-color', 'white');
+			}
+		});
+
+	});
+</script>
+</head>
+<body>
+
+	<h1>첫번째 문장입니다</h1>
+	<h1>두번째 문장입니다</h1>
+	<div>
+		<h1>세번째 문장입니다</h1>
+	</div>
+	<h1>네번째 문장입니다</h1>
+	<button>클릭하세요</button>
+
+</body>
+</html>

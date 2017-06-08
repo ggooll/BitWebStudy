@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var nums = [ 10, 20, 30, 40, 50 ];
+	// 0번째 변수는 10
+	// 1번째 변수는 20...
+
+	// 100씩 더하고싶다.
+	for (var i = 0; i < nums.length; i++) {
+		nums[i] += 100;
+	}
+	console.log(nums);
+
+	// map - 배열 카피(참조를 다르게하는 복사본)
+	// system.arraycopy와 동작이 같은듯 싶다
+	var copyNums = nums.map(function(element) {
+		// 지지고볶고 가능
+		if (element < 130) {
+			return element;
+		}
+		return element + 100;
+	});
+	console.log(copyNums);
+</script>
+</head>
+<body>
+
+</body>
+</html>

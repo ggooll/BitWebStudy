@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	true || alert("출력이 됩니까? 1");
+	true && alert("출력이 됩니까? 2");
+
+	false || alert("출력이 됩니까? 3");
+	false && alert("출력이 됩니까? 4");
+
+	// 논리연산자는 &&가 우선순위가 높으나,
+	// 연산을 먼저하겠다는 것이 아니라 비교대상을 묶는 개념
+	var a = 1;
+	var b = -1;
+	var c = 0;
+	var d = ++a || ++b && ++c;
+	alert('a : ' + a + ', b : ' + b + ', c : ' + c + ', d : ' + d);
+
+	var a = 10;
+	var b = 0;
+	c = (b != 0) && (a % b == 0);
+	alert(c);
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

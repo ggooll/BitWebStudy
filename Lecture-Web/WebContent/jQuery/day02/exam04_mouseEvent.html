@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	// mouseenter, mouseleave 
+	$(function() {
+/* 		
+		// mouse 진입시
+		$('h1').mouseenter(function() {
+			$('h1').css('background-color', 'pink');
+		});
+
+		// mouse가 떠날경우
+		$('h1').mouseleave(function() {
+			$('h1').css('background-color', 'yellow');
+		});
+ */
+ 
+		// enter와 leave는 세트인경우가 많음 
+		// 이를 수행하는 hover 함수가 있다. enter와 leave에 대한 콜백함수 2개가 필요하다.
+		$('h1').hover(function() {
+			$('h1').css('background-color', 'pink');
+		}, function() {
+			$('h1').css('background-color', 'yellow');
+		});
+
+	});
+</script>
+<style>
+h1 {
+	background-color: yellow;
+}
+</style>
+</head>
+<body>
+	<h1>마우스를 접근시켜 보세요</h1>
+	<h1>마우스를 접근시켜 보세요</h1>
+	<h1>마우스를 접근시켜 보세요</h1>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>setTimeout</title>
+
+<script>
+	// setTimeout (딜레이를 주고 기능을 수행)
+	function clickButton() {
+		// setTimeout('alert("5초 지났습니다.")', 5000);
+
+		setTimeout(function() {
+			alert('5초지났습니다.');
+		}, 5000);
+	}
+</script>
+
+</head>
+<body>
+
+	<input type="button" value="클릭" onclick="alert('클릭')">
+	<br>
+	<br>
+	<!-- 클릭시 5초가 지나면 alert가 뜨게 만듬 -->
+	<input type="button" value="타이머" onclick="clickButton()">
+
+</body>
+</html>

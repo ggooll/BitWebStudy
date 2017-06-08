@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+body {
+	background-image: url('images/aaa.png');
+	background-repeat: repeat;
+	/* background-position: 100px 100px; */
+	background-position: top left;
+}
+
+div {
+	width: 300px;
+	height: 300px;
+	background: maroon;
+	margin: 30px;
+}
+
+/* img는 div 안에 있음, 100% = div의 최대크기 */
+/* margin / padding 둘다 가능한 이유? */
+img {
+	width: 70%;
+	height: 70%;
+	margin: 15%;
+}
+
+#menu {
+	width: 500px;
+	height: 300px;
+	background-color: black;
+	background-image: url('images/bullet1.gif');
+	background-repeat: repeat-x;
+}
+</style>
+
+</head>
+<body>
+
+	<div>
+		<img src="images/cat.jpg" />
+	</div>
+
+
+	<div id="menu"></div>
+
+</body>
+</html>

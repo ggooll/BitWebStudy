@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#btn01').click(function() {
+			// $('#p01').text()는 그 값을 리턴함 (get)
+			// $('#p01').text("ads")는 자기자신을 리턴함 (set)
+			$('#p01').text("<mark>문장이 변환되었습니다</mark>");
+			$('#p02').text("<mark>문장이 변환되었습니다</mark>");
+		});
+
+		$('#btn02').click(function() {
+			// $('#p01').html()는 그 값을 리턴함 (get)
+			// $('#p01').html("<> asdf <>")도 자기자신을 리턴함 (set)
+			$('#p01').html("<mark>문장이 변환되었습니다</mark>");
+			$('#p02').html("<mark>문장이 변환되었습니다</mark>");
+		});
+
+		$('#btn03').click(function() {
+			// $('#p01').attr(속성)는 해당 속성의 값을 리턴함 (get)
+			// $('#p01').attr(속성, 값)을 주면 그 속성을 해당값으로 set하고 자기자신을 리턴
+			$('#site').attr('href', 'http://www.daum.net');
+			$('#site').attr('target', '_blank');
+		});
+
+		$('#btn04').click(function() {
+			// 여러개의 태그값을 변경하기위해 text와 html에 callback함수를 정의할 수 있음, 개수만큼 호출되게 됨
+			// return할 시 set, 안할시 get이 된다. (내부에서 this.innerText에 값을 변경해도 된다)
+			$('p').text(function(i) {
+				return i + '번째 문장변환';
+			});
+		});
+
+	});
+</script>
+</head>
+<body>
+	<a href="http://www.naver.com" id="site">사이트 이동</a>
+	<br>
+	<p id="p01">첫번째 문장입니다.</p>
+	<p id="p02">두번째 문장입니다.</p>
+	<button id="btn01">TEXT변환</button>
+	<button id="btn02">HTML변환</button>
+	<button id="btn03">주소변환</button>
+	<button id="btn04">문장변환</button>
+</body>
+</html>

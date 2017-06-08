@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+ul li {
+	list-style-type: none;
+	float: left;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-weight: bold;
+}
+
+/* 첫번째 리스트 속성 */
+li:first-child {
+	color: orange;
+}
+
+/* 마지막 리스트 속성 */
+li:last-child {
+	color: red;
+}
+
+/* 수열의 형태로 지정가능 */
+li:nth-child(3n) {
+	color: maroon;
+}
+
+li:nth-child(3n+1) {
+	color: green;
+}
+
+li:nth-child(3n+2) {
+	color: pink;
+}
+</style>
+</head>
+<body>
+
+	<ul>
+		<li>ONE</li>
+		<li>TWO</li>
+		<li>THREE</li>
+		<li>FOUR</li>
+		<li>FIVE</li>
+		<li>SIX</li>
+		<li>SEVEN</li>
+		<li>EIGHT</li>
+		<li>NINE</li>
+		<li>TEN</li>
+	</ul>
+
+</body>
+</html>

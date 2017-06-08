@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 배열..</title>
+<script>
+	// 0부터의 접근 (기존까지의 배열 인덱싱)
+	var state = new Array();
+	state[0] = '서울특별시';
+	state[1] = '부산광역시';
+
+	// 자바스크립트의 인덱스는 문자열도 가능하다
+	state['서초'] = '서울특별시';
+	state['동래'] = '부산광역시';
+	state['둔산'] = '대전광역시';
+
+	// state.toString()으로 접근하면 숫자인덱스밖에 접근이안됨
+	// (0과 1까지만 나옴, 내부메소드가 그렇게 되어있는 것 같다)
+
+	// state의 for문으로 돌리면 모두 볼수있다.. (지금까지의 원소갯수 5개 - 0,1,+ + +)
+	// 0과 1도 문자열으로 뽑혀나옴.. 
+	for ( var key in state) {
+		console.log(typeof key + " ~ " + key + " : " + state[key]);
+	}
+
+	// 배열로 객체처럼 사용할 수 있다.
+	var person = [];
+	person['name'] = '홍길동';
+	person['phone'] = '010-2222-3333';
+	// object처럼 .으로 접근
+	person.addr = '서울시 서초구 서초동';
+
+	for ( var key in person) {
+		document.write(key + " : " + person[key] + "<br>");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

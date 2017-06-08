@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Screen</title>
+
+<script>
+	var sub = window.open("", "", "width=500, height=500");
+	var width = screen.width;
+	var height = screen.height;
+
+	sub.moveTo(0, 0);
+	sub.resizeTo(width, height);
+
+	var cnt = 0;
+	var interval = setInterval(function() {
+		sub.resizeBy(-60, -30);
+		sub.moveBy(30, 15);
+		if (++cnt == 10)
+			clearInterval(interval);
+	}, 1000);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

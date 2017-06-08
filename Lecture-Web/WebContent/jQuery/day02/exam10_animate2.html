@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {	
+		
+		// animate는 여러번 정의될 경우 순차적으로 수행된다 
+		$('#square').animate({
+			'width' : '200px'
+		});
+		
+		$('#square').animate({
+			'left' : '100px',
+			'opacity' : '0.6'
+		}, 1000);
+		
+		$('#square').animate({
+			'width' : '100px',
+			'height' : '200px',
+			'opacity' : '0.3'
+		}, 2000);
+		
+		$('#square').animate({
+			'left' : '0',
+			'top' : '100px',
+			'height' : '100px',
+			'opacity' : '0.6'
+		}, 1000);
+		
+		$('#square').animate({
+			'left' : '0',
+			'top' : '0',
+			'opacity' : '1'
+		});
+	});
+</script>
+
+<style>
+#square {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: relative;
+}
+</style>
+
+</head>
+<body>
+	<div id="square"></div>
+</body>
+</html>

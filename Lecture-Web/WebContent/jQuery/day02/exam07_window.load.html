@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+	// window load보다 먼저 호출됨
+	$(document).ready(function() {
+		alert("T>T?");
+	});
+
+	// jquery에도 window load가 있음 (3버전에서는 없어졌음, 1버전 cdn을 추가)
+	// (충돌우려가 있다 - jquery noConflict에 대해)
+	$(window).load(function() {
+		alert('dd?');
+	});
+
+	$(window).resize(function() {
+		console.log('resize')
+	});
+
+	$(window).scroll(function() {
+		console.log('scroll')
+	});
+</script>
+</head>
+<body>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+	<h1>hello</h1>
+</body>
+</html>

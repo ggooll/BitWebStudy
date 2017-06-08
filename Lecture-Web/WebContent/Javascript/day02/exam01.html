@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Script로 BODY의 내용 읽기</title>
+
+<script>
+	// 문서가 위에서부터 읽히기 때문에, 아직 body를 알 수없음
+
+	// 문서가 로드되면(html을 모두 읽고나면) 자동으로 수행되는 함수가 window.onload 이다.
+	window.onload = function() {
+		// 내가 정의한 함수가 호출되게끔 
+		alert(document.body.innerHTML);
+		var aa = document.body.getElementsByTagName('h2');
+		alert(aa[0].innerHTML);
+		aa[1].innerHTML = "안녕하세요";
+
+		var list = '';
+		list += '<ul>';
+		list += '<li>aaa</li>';
+		list += '<li>bbb</li>';
+		list += '<li>ccc</li>';
+		list += '</ul>';
+
+		// document.body.innerHTML = list;
+		// innerHTML -> HTML태그는 HTML태그로 인식하겠다.
+		// document.body.innerText = list;
+		// innerHTML -> HTML태그고 뭐고 문자열로 인식하겠다.
+
+		// document.body.innerHTML += list;
+		// 기존 것에 이어붙이기
+
+		document.body.innerHTML += "<br>";
+		document.body.innerText += list;
+
+	};
+</script>
+
+</head>
+<body>
+	hello
+	<br>
+	<h2>환영합니다1</h2>
+	<h2>환영합니다2</h2>
+</body>
+</html>

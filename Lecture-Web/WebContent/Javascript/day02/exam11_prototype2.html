@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prototype 사용</title>
+
+<script>
+	// 이미 제공되고있는 Date 객체에다가 
+	// 내가 사용하고싶은 기능을 프로토타입으로 정의하여 사용가능하다.
+	var now = new Date();
+
+	// 요일 -> 0 ~ 6 일월화수목금토 순
+	Date.prototype.getToday = function() {
+		var year = this.getFullYear();
+		var month = this.getMonth() + 1;
+		var date = this.getDate();
+		var day = this.getDay();
+		var week = [ "일", "월", "화", "수", "목", "금", "토" ];
+		console.log("오늘은 " + year + "년 " + month + "월 " + date + "일 "
+				+ week[day] + "요일 입니다.")
+	}
+	now.getToday();
+
+	Date.prototype.getClock = function() {
+		console.log("현재 시간은 : " + this.getHours() + "시 " + this.getMinutes()
+				+ "분 입니다.");
+	}
+	now.getClock();
+</script>
+
+</head>
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 탐색</title>
+
+<script>
+	window.onload = function() {
+		//	var id = document.getElementById("id");
+		//	var pwd = document.getElementById("pwd");
+
+		// querySelector # . 를 활용할 수도 있다.
+		var id = document.querySelector('#id');
+		id.innerText = "아이디";
+		var pwd = document.querySelector('.pwd');
+		pwd.innerText = "비밀번호";
+	};
+</script>
+
+</head>
+<body>
+	<table style="width:100px; height:100px" border=1>
+		<tr>
+			<td id="id">ID</td>
+		</tr>
+		<tr>
+			<td class="pwd">PASSWORD</td>
+		</tr>
+	</table>
+</body>
+</html>

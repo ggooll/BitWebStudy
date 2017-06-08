@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	// 함수를 인자로받아 대신 호출하는 함수
+	function testFunction() {
+		alert("call testFunction");
+	}
+
+	var callFunc = function(testFunc) {
+		testFunc();
+	}
+	callFunc(testFunction);
+	console.log(typeof callFunc); // function 
+
+	// 
+	function sum(a, b) {
+		return a + b;
+	}
+
+	function printSum(a, b) {
+		alert(a + ' 와 ' + b + '의합 : ' + window.sum(a, b));
+		// window.sum은 내부부터 찾지않고 밖에서부터 찾는가봄
+
+		alert(a + ' ~ ' + b + '까지 총합 : ' + sum(a, b));
+		// 나만 쓸꺼야( 이 함수 안에서만 필요하다 )
+		// 로컬 함수를 정의할 수 있다.
+		// 로직이 길어지면 부분적으로 자른다?..				
+		function sum(a, b) {
+			var s = 0;
+			while (a <= b) {
+				s += a++;
+			}
+			return s;
+		}
+	}
+	printSum(1, 10);
+
+	// 오버로딩 흉내내기 
+	function func() {
+		switch (arguments.length) {
+		case 0:
+			alert('call...');
+			break;
+		case 1:
+			alert('1 argument = ' + arguments[0]);
+			break;
+		case 2:
+			alert('no : ' + arguments[0] + ", message ; " + arguments[1]);
+			break;
+		}
+	}
+	func();
+	func('A');
+	func(100, "HELLO");
+</script>
+</head>
+<body>
+
+	<br> 자바스크립트가 오버로딩을 허용하지 않는 이유
+	<br> 자바의 경우 함수를 구분할때, 함수의이름과 인자까지
+	<br> 자바스크립트는 함수를 구분할 수 있는것이 이름밖에없기 때문
+
+	<br> 따라서 인자의 수가 맞지않거나, 인자가 없는함수에 인자를 넣어 호출해도
+	<br> 일단 호출하고 이후에 원하는 결과를 받지 못하는 상황임
+
+	<br> 함수에 arguments라는 것이 정의되어있고, 정의에 관계없이
+	<br> 호출된 곳에서 넘겨받은 인자들을 가지고 있는 Array가 있다.
+	<br> 경우에따라서는 arguments를 검사하고 사용할 수도 있으나
+	<br> 권장하는 방법은 아님(pass)
+
+</body>
+</html>

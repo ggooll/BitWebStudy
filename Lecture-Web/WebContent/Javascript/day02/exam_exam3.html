@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var cnt = 0;
+	function btnClick() {
+		++cnt;
+		var str = document.body.innerHTML;
+		str = str.replace(parseInt(str), cnt);
+		document.body.innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	0번 클릭
+	<input type="button" value="클릭" onclick="btnClick()">
+	<br>
+</body>
+</html>
