@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(function() {
+		// 동https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png적으로 이미지 전후에 글씨를 붙이고 싶다.
+		// body의 append / prepend가아닌, img 태그를 통해 전후로 붙여본다.
+
+		$('img').before('<p>전</p>');
+		$('img').after('<p>후</p>', '<p>맨뒤!</p>');		
+	})
+</script>
+</head>
+<body>
+	<h1>HELLO</h1>
+	<img src="https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png" />
+	<h1>GOOD-BYE</h1>
+</body>
+</html>

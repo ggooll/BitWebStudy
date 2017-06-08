@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script>
+	//동적으로 클래스명을 적용
+	$(function() {
+		// body아래있는 모든 태그에다가 클래스명을 적용하고 싶다.
+		$('body *').addClass('c01');
+
+		// 클래스명을 다시 적용할경우 바뀌지않고, c01과 c02 둘다 가지게 된다.
+		$('body *').addClass('c02');
+
+		// 클래스를 지우고 싶은경우 removeClass 사용 
+		$('h1').removeClass('c01');
+
+		// p태그의 c02클래스를 삭제
+		$('p').removeClass('c02');
+
+		// c02 적용 (p빼고 다)
+		$('.c02').css('color', 'green');
+
+		// c01 적용 (h1빼고 다)
+		$('.c01').css('color', 'orange');
+	});
+</script>
+</head>
+<body>
+	<!-- 클래스는 여러개를 가질 수 있다 -->
+	<h1 class="c1 c2 c3">나는 문장입니다.</h1>
+	<h1>나는 문장2입니다.</h1>
+	<p>나는 단락입니다.</p>
+	<div>나는 구역입니다.</div>
+</body>
+</html>
