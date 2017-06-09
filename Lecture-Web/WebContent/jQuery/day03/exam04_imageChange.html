@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script>
+	$('document').ready(function() {
+		// $('img').first().css('border', '3px solid red');
+		// $('img').last().css('border', '3px solid red');
+		// $('img').eq(2).css('border', '3px solid red');
+
+		$('button').click(function() {
+			// 첫번째 이미지를 잘라서 가장 마지막으로 이동을 시키고 싶다.
+			// $('img').first().appendTo('body');
+			$('img').last().prependTo('body');
+		});
+
+	});
+</script>
+
+<style>
+img {
+	width: 200px;
+	height: auto;
+}
+</style>
+
+</head>
+<body>
+
+	<img src="../img/img01.jpg">
+	<img src="../img/img02.jpg">
+	<img src="../img/img03.jpg">
+	<img src="../img/img04.jpg">
+	<img src="../img/img05.jpg">
+	<br>
+	<br>
+	<button id="btn">클 릭</button>
+</body>
+</html>

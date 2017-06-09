@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#btnPrev').click(function() {
+			$('img').first().appendTo('#gallery');
+		});
+
+		$('#btnNext').click(function() {
+			$('img').last().prependTo('#gallery');
+		});
+		
+		$('img').click(function(){
+			alert("haha");
+		});
+	});
+
+	setInterval(function() {
+		$('img').last().prependTo('#gallery');
+	}, 1000);
+</script>
+<style>
+img {
+	width: 200px;
+}
+</style>
+</head>
+<body>
+	<button id="btnPrev">이전</button>
+	<span id="gallery"> <img src="/Lecture-Web/jQuery/img/img01.jpg"> <img src="/Lecture-Web/jQuery/img/img02.jpg"> <img
+		src="/Lecture-Web/jQuery/img/img03.jpg"> <img src="/Lecture-Web/jQuery/img/img04.jpg"> <img src="/Lecture-Web/jQuery/img/img05.jpg">
+	</span>
+
+	<button id="btnNext">이후</button>
+</body>
+</html>

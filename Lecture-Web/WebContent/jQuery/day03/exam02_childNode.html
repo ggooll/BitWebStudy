@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<style>
+#ancester * {
+	border: 2px solid red;
+	display: block;
+	padding: 10px;
+	margin: 10px;
+}
+</style>
+
+<script>
+	$('document').ready(function() {
+		// ancester부터 자식들에게(바로 밑 자식)
+		// $('#ancester').children().css('border', '2px solid green');
+		// $('#ancester').children('#div02').css('border', '2px solid green');
+
+		// 자기 자식중 ul인 것
+		// $('#ancester').children('ul').css('border', '2px solid green');
+
+		// 내 후손들을 찾는다 find, ul인 것들 모두?
+		// $('#ancester').find('ul').css('border', '2px solid green');
+
+		// find의 목적은 탐색, 모든 후손들에 대해서는 *로 
+		// $('#ancester').find('*').css('border', '2px solid green');
+
+		// 자식중 첫번째와 마지막
+		// $('#ancester').children().first().css('border', '2px solid pink');
+		// $('#ancester').children().last().css('border', '2px solid blue');
+
+		// span 태그, 첫번째와 마지막
+		$('#ancester').find('span').first().css('border', '2px solid pink');
+		$('#ancester').find('span').last().css('border', '2px solid blue');
+
+	});
+</script>
+</head>
+<body>
+	<div id="ancester">
+		<div id="div01">
+			div1
+			<ul>
+				ul
+				<li>li <span>span</span>
+				</li>
+			</ul>
+		</div>
+		<div id="div02">
+			div2
+			<p>
+				p <span>span</span>
+			</p>
+		</div>
+	</div>
+</body>
+</html>

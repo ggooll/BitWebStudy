@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+	$('document').ready(function() {
+		// h2와 같은레벨에 있는 형제들에 대해서(본인 제외)
+		// $('h2').siblings().css('border', '2px solid green');
+
+		// h2와 같은레벨에 있는 형제들 중 p태그에 대해서
+		// $('h2').siblings('p').css('border', '2px solid green');
+
+		// h2의 다음 것 (오른쪽)
+		// $('h2').next().css('border', '2px solid green');
+
+		// h2의 이전 것 (왼쪽)
+		// $('h2').prev().css('border', '2px solid green');
+
+		// span태그에서 h2태그를 만날때까지 (형제)
+		// $('span').nextUntil('h2').css('border', '2px solid yellow');
+
+		// span태그에서 다음 형제 싹다
+		// $('span').nextAll().css('border', '2px solid pink');
+
+		// h2태그에서 이전 형제들 싹다
+		// $('h2').prevAll().css('border', '2px solid blue');
+
+		// div중 첫번째 0 ~ 두번째 1...
+		// $('div').eq(0).css('border', '2px solid green');
+
+		// div의 바로 밑 자식들 중 7번째 것
+		// $('div > *').eq(6).css('border', '2px solid green');
+
+		// div의 바로 밑 자식들 중 p태그인것 중 3번째 것
+		// $('div > p').eq(2).css('border', '2px solid green');
+
+		// div의 자식들 중에서 p가 아닌 것들
+		// $('div > *').not('p').css('border', '2px solid blue');
+
+		// div의 자식들 중에서 p태그만
+		// $('div > *').filter('p').css('border', '2px solid blue');
+
+		// 자식과 후손을 헷갈리지 말 것
+		// 자식들 > 
+		$('#div01 > *').filter('p').css('border', '2px solid green');
+		// 후손 모두
+		$('#div02 *').filter('span').css('border', '2px solid pink');
+	});
+</script>
+
+<style>
+body * {
+	border: 2px solid red;
+	display: block;
+	padding: 10px;
+	margin: 10px;
+}
+</style>
+</head>
+<body>
+	<div id="div01">
+		div1
+		<p>p1-1</p>
+		<span>span-1<a>ggggd</a></span>
+		<h1>
+			<span>h1-1</span>
+		</h1>
+		<h2>h2-1</h2>
+		<p>p1-2</p>
+	</div>
+	<div id="div02">
+		div2
+		<p>p2-1</p>
+		<span>span-2<a>gggg</a></span>
+		<h1>
+			<span>h1-2</span>
+		</h1>
+		<h2>h2-2</h2>
+		<p>p2-2</p>
+	</div>
+</body>
+</html>

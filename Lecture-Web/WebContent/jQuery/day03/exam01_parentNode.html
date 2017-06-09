@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<style>
+#ancester * {
+	border: 2px solid red;
+	display: block;
+	padding: 10px;
+	margin: 10px;
+}
+</style>
+
+<script>
+	$('document').ready(function() {
+		// span태그의 부모(바로 위)
+		// $('span').parent().css('border', '2px solid blue');
+		
+		// span태그의 부모의 부모
+		// $('span').parent().parent().css('border', '2px solid green');
+		
+		// span태그의 모든 조상들 (perants - html, body까지)
+		// $('span').parents().css('border', '2px solid purple');
+		
+		// span태그의 조상들 중 div들만 적용
+		// $('span').parents('div').css('border', '2px solid pink');
+		
+		// span태그의 조상들 중 div 전까지 모두 적용
+		// $('span').parentsUntil('div').css('border', '2px solid aqua');
+				
+	});
+</script>
+
+
+</head>
+<body>
+	<div id="ancester">
+		<div>
+			div1
+			<ul>
+				UL
+				<li>LI <span>span</span>
+				</li>
+			</ul>
+		</div>
+		<div>
+			div2
+			<p>
+				p <span>span</span>
+			</p>
+		</div>
+	</div>
+</body>
+</html>
