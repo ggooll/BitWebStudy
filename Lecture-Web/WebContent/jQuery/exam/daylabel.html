@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="/Lecture-Web/jQuery/js/jquery-3.2.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script>
 	$(function() {
@@ -12,8 +12,9 @@
 		$('div').mouseenter(function() {
 			$(this).animate({
 				'width' : '+=50px',
-				'height' : '+=50px'
-			}, 200);
+				'height' : '+=50px',
+				'line-height' : '+=50px'
+			}, 100);
 
 			thisDay = $(this).text();
 			$(this).text(thisDay + '요일');
@@ -22,8 +23,9 @@
 		$('div').mouseleave(function() {
 			$(this).animate({
 				'width' : '-=50px',
-				'height' : '-=50px'
-			}, 200);
+				'height' : '-=50px',
+				'line-height' : '-=50px'
+			}, 0);
 			var text = $(this).text(thisDay);
 		});
 
@@ -36,17 +38,17 @@
 div {
 	position:relative;
 	margin: 0;
-	width: 80px;
-	height: 80px;
+	width: 100px;
+	height: 100px;
 	float: left;
 	text-align: center;
-	font-weight: bold;
-	
+	font-weight: bolder;
+	font-size: 20px;
+	line-height: 100px;
 }
 </style>
 </head>
 <body>
-
 	<div style="background-color: red">일</div>
 	<div style="background-color: orange">월</div>
 	<div style="background-color: yellow">화</div>
@@ -54,6 +56,5 @@ div {
 	<div style="background-color: aqua">목</div>
 	<div style="background-color: blue">금</div>
 	<div style="background-color: purple">토</div>
-
 </body>
 </html>

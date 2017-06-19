@@ -1,6 +1,7 @@
 $(function() {
 
 	$('#textDiv').attr("spellcheck", false);
+
 	$('#textDiv').keydown(function(e) {
 		if (e.keyCode === 13) {
 			document.execCommand('insertHTML', false, '<br><br>');
@@ -8,136 +9,69 @@ $(function() {
 		}
 	});
 
+	$('#textDiv').keypress(function(e) {
+		if ((e.which == 90 || e.keyCode == 90) && e.ctrlKey) {
+			document.execCommand('undo');
+		}
+	});
+
 	$('#textDiv').focus(function() {
-		$('#textDiv').css('border', '3px solid steelblue');
+		$('#textDiv').css('border', '2px solid #F06D65');
 	});
 
 	$('#textDiv').blur(function() {
 		$('#textDiv').css('border', '2px solid gray');
 	});
-
-	$('#btnSelectAll').click(function() {
-		$('#textDiv').focus();
-		document.execCommand('selectAll', false, null);
-	});
-
-	$('#btnclearAll').click(function() {
-		$('#textDiv').empty();
-		$('#textDiv').focus();
-	});
-
-	$('#btnclearAttr').click(function() {
-		$('#textDiv').html(makePureText());
-	});
 });
 
-function makePureText() {
-	// $('#textDiv *').css('background', '');
-	$('#textDiv *').removeAttr('style');
-	var regex = /(<([^(br)^>]+)>)/ig;
-	var htmlText = $('#textDiv').html();
-	var pureStr = htmlText.replace(regex, "");
-	return pureStr;
-}
-
 /**
- * font style
+ * 전체선택, 전체지우기, 속성제거 실행취소, 다시실행
  */
-
 $(function() {
-	$('#btnBold').click(function() {
-		fontStyle("bold");
+
+	$('#selectAll').click(function() {
+		$('#textDiv').focus();
+		document.execCommand('selectAll');
 	});
 
-	$('#btnItalic').click(function() {
-		fontStyle("italic");
+	$('#delete').click(function() {
+		$('#textDiv').focus();
+		document.execCommand('selectAll');
+		document.execCommand('delete');
+		$('#textDiv').focus();
+	});
+
+	$('#removeFormat').click(function() {
+		document.execCommand('selectAll');
+		document.execCommand('removeFormat');
+		$('#textDiv').focus();
+	});
+
+	$('#undo').click(function() {
+		document.execCommand('undo');
+	});
+
+	$('#redo').click(function() {
+		document.execCommand('redo');
+	});
+
+})
+
+/**
+ * font 스타일 버튼
+ */
+$(function() {
+
+	$('.decoration, .justify').click(function() {
+		var command = $(this).attr('id');
+		document.execCommand(command);
 	})
 
-	$('#btnUnderline').click(function() {
-		fontStyle("underline");
-	});
-});
-
-/**
- * textArea align
- */
-
-$(function() {
-	$('#btnAlignCenter').click(function() {
-		$('#textDiv').attr('align', 'center');
-	});
-
-	$('#btnAlignLeft').click(function() {
-		$('#textDiv').attr('align', 'left');
-	});
-
-	$('#btnAlignRight').click(function() {
-		$('#textDiv').attr('align', 'right');
+	$('.fontAttr').change(function() {
+		var attr = $(this).attr('id');
+		var val = $(this).val();
+		document.execCommand(attr, false, val);
+		$(this).val("").attr("selected", "selected");
 	});
 
 });
-
-/**
- * select Option event
- */
-
-$(function() {
-	$('#fontFamily').change(function() {
-		var fontFamily = $('#fontFamily option:selected').val();
-		if (fontFamily !== "") {
-			fontStyle('fontFamily', fontFamily);
-		}
-		$("#fontFamily").val("").attr("selected", "selected");
-	});
-
-	$('#fontSize').change(function() {
-		var size = $('#fontSize option:selected').val();
-		if (size !== "") {
-			fontStyle('size', size);
-		}
-		$("#fontSize").val("").attr("selected", "selected");
-	});
-
-	$('#fontColor').change(function() {
-		var color = $('#fontColor option:selected').val();
-		if (color !== "") {
-			fontStyle('color', color);
-		}
-		$("#fontColor").val("").attr("selected", "selected");
-	});
-
-	$('#fontBackground').change(function() {
-		var background = $('#fontBackground option:selected').val();
-		if (background !== "") {
-			fontStyle('background', background);
-		}
-		$("#fontBackground").val("").attr("selected", "selected");
-	});
-});
-
-function fontStyle(type, value) {
-	var range = window.getSelection().getRangeAt(0);
-	if (range === "")
-		return;
-	var span = document.createElement('span');
-
-	if (type === 'bold') {
-		span.style.fontWeight = 'bold';
-	} else if (type === 'italic') {
-		span.style.fontStyle = 'italic';
-	} else if (type === 'underline') {
-		span.style.textDecoration = 'underline';
-	} else if (type === 'size') {
-		span.style.fontSize = value + 'pt';
-	} else if (type === 'color') {
-		span.style.color = value;
-	} else if (type === 'background') {
-		span.style.backgroundColor = value;
-	} else if (type === 'fontFamily') {
-		span.style.fontFamily = value;
-	}
-
-	// extractContents();
-	span.appendChild(range.extractContents());
-	range.insertNode(span);
-}
