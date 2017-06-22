@@ -1,0 +1,93 @@
+#main-container {
+	width: 950px;
+	margin: 0 auto;
+	text-align: center;
+	font-family : 나눔고딕, sans-serif;
+	font-size : 11pt;
+}
+
+#memberTable {
+	width: 100%;
+}
+
+#memberTable td{
+	padding: 5px;
+}
+
+#registryBtn{
+	padding: 5px;
+	width: 100px;
+	height: 50px;
+	font-weight: bold;
+	font-size : 15px;
+}
+
+#container {
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#header {
+	width: 80%;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+hr {
+	margin-top : 2px;
+	margin-bottom : 2px;
+}
+
+.boldHr {
+	width: 100%;
+	border: 2px solid black;
+}
+
+#formDiv {
+	width: 80%;
+	margin: 10px auto;
+	text-align: left;
+	padding: 10px;
+}
+
+#formDiv div {
+	height: 50px;
+	line-height: 50px;
+}
+
+.infoLogo {
+	display: inline-block;
+	width: 180px !important;
+	margin-left : 10px;
+	margin-right: 20px;
+	font-size: 25px;
+	vertical-align: middle;
+	font-weight: bold;	
+}
+
+#formDiv div{
+	padding :5px;
+}
+
+#formDiv div input {
+	line-height: 25px;
+	font-size: 15px;
+	text-indent: 5px;
+	vertical-align: middle;
+}
+
+#submitDiv {
+	text-align: center;
+}
+
+#submitDiv input{
+	text-align: center;
+	width: 100px;
+	height: 50px;
+	margin: auto 10px;
+	font-weight: bold;
+	font-size : 15px;
+}
+
+

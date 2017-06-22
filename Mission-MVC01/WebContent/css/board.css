@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+table, th, td{
+	border : 1px solid #b0c6df;	
+	border-collapse: collapse;
+	height: 100%;
+	color: #555;
+}
+
+th, td{
+	padding: 6px;
+	height: 30px;
+	font-size: 12pt;
+}
+
+table th {
+	background-color : lightgray;
+	color : #5f7bb6;
+}
+
+section table tr:hover{
+	background : #FEFDCF;
+} 
+ 
+tr.even{
+	background : #DDD;
+}
+
+td a:link, td a:visited{
+	text-decoration: none;
+	color : black;
+}
+
+td a:hover{
+	text-decoration: underline;
+}
+
+#pageDiv ul li a{
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+/* 
+#pageDiv ul li a:link{
+	text-decoration: none;	
+}
+
+#pageDiv ul li a:visited{
+	text-decoration: none;	
+} */

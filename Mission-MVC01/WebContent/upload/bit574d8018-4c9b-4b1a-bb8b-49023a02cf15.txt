@@ -1,0 +1,15 @@
+id=ggooll
+name=임규철
+password=ggoo12
+passwordChk=ggoo12
+
+email_id=ggooll
+email_domain=naver.com
+
+tel1=010
+tel2=5248
+tel3=8557
+
+post=472740
+basic_addr=경기도+남양주시+평내동
+detail_addr=효성아파트+107동+1704호
