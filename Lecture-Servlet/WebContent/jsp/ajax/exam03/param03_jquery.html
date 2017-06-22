@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		// 비동기로 param03.jsp?name=홍길동&age=25 를 호출 시
+		$(':button').click(function() {
+			
+			var name = $('#name').val();
+			var age = $('#age').val();
+			
+			$.ajax({
+				url : 'param03.jsp',
+				type : 'get',
+				// data : 'name=홍길동&age=25',
+				data : {'name' : name, 'age' : age}, // javascript object형태로
+				success : callback
+			});
+		});
+
+	});
+
+	function callback(data) {
+//		$('#debug').val(data);
+		$('#debug').append(data);
+	}
+</script>
+
+</head>
+<body>
+	<textarea rows="10" cols="80" id="debug"></textarea>
+	<br />
+	이름 : <input type="text" name="name" id="name"><br>
+	나이 : <input type="text" name="age" id="age"><br>
+	<button>호출</button>
+</body>
+</html>

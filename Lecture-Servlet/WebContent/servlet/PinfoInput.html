@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	function checkForm() {
+		var form = document.writeForm;
+
+		if (form.name.value === "") {
+			alert("이름을 입력하세요");
+			form.name.focus();
+			return false;
+		}
+		if (form.id.value === "") {
+			alert("아이디를 입력하세요");
+			form.id.focus();
+			return false;
+		}
+		if (form.password.value === "") {
+			alert("비밀번호를 입력하세요");
+			form.password.focus();
+			return false;
+		}
+		if (form.radio.value === "") {
+			alert("성별을 선택하세요");
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+
+	<h1>개인 정보 입력</h1>
+	<form action="/Lecture-Servlet/pinfoResult" method="post" onsubmit="return checkForm()" name="writeForm">
+		<br> 이름 : <input type="text" name="name"><br>
+		<br> 아이디 : <input type="text" name="id"><br>
+		<br> 패스워드 : <input type="password" name="password"><br>
+		<br> 성 별 : 남<input type="radio" name="gender" value="male"> 여<input type="radio" name="gender" value="male"><br>
+		<br> 메일수신여부 : 공지메일 <input type="checkbox" name="mailing" value="notice"> 
+							광고메일 <input type="checkbox" name="mailing" value="marketing">
+							배송확인메일 <input type="checkbox" name="mailing" value="shipping"> <br>
+		<br> 직업 : <select name="job">
+			<option>회사원</option>
+			<option>학생</option>
+			<option>기타</option>
+		</select>
+		<br><br> 
+		<input type="reset" value="취소"> <input type="submit" value="확인">
+	</form>
+</body>
+</html>

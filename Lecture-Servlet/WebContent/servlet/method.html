@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- action 같은프로젝트 내 움직일때, /의 기준은 프로젝트부터 -->
+	<form action="/Lecture-Servlet/method" method="get">
+		<input type="text" name="id" placeholder="아이디입력">
+		<br>
+		<input type="text" name="name" placeholder="이름입력">
+		<input type="submit" value="GET방식">
+	</form>
+	<hr>
+	<form action="/Lecture-Servlet/method" method="post">
+		<input type="text" name="id" placeholder="아이디입력">
+		<br>
+		<input type="text" name="name" placeholder="이름입력">
+		<input type="submit" value="POST방식">
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<members>
+	<member>
+		<id>hong</id>
+		<name>홍길동</name>
+	</member>
+	<member>
+		<id>kang</id>
+		<name>강길동</name>
+	</member>
+	<member>
+		<id>han</id>
+		<name>한길동</name>
+	</member>
+</members>
+
+<!-- name=value를 표현하기위해, name을 tag값으로, 그 안에감싸진 값을 value로 표현 -->
+<!-- XML의 목적 역시, 방대한 양의 데이터를 어떤 속성값인지 알기위해 사용 -->

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>Lecture-Servlet</display-name>
+
+	<!-- 서블릿에 대한 경로(WEB-INF-classes 아래의 경로) -->
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>kr.co.bit.servlet.HelloServlet</servlet-class>
+	</servlet>
+	<!-- servlet-name이 동일한 것과 맵핑할 가상주소를 설정(여러개 가능) -->
+	<!-- url-pattern의 / 기준은 프로젝트명 직후 -->
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+
+	<!-- MethodServlet -->
+	<servlet>
+		<servlet-name>method</servlet-name>
+		<servlet-class>kr.co.bit.servlet.MethodServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>method</servlet-name>
+		<url-pattern>/method</url-pattern>
+	</servlet-mapping>
+
+	<!-- TableServlet -->
+	<servlet>
+		<servlet-name>table</servlet-name>
+		<servlet-class>kr.co.bit.servlet.TableServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>table</servlet-name>
+		<url-pattern>/servlet/table</url-pattern>
+	</servlet-mapping>
+
+	<!-- ExamMethodServlet -->
+	<servlet>
+		<servlet-name>multiValue</servlet-name>
+		<servlet-class>kr.co.bit.servlet.MultiValueServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>multiValue</servlet-name>
+		<url-pattern>/multiValue</url-pattern>
+	</servlet-mapping>
+	
+	<!-- personInfoServlet -->
+	<servlet>
+		<servlet-name>personInfo</servlet-name>
+		<servlet-class>kr.co.bit.servlet.PersonInfoServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>personInfo</servlet-name>
+		<url-pattern>/pinfoResult</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>
+			60<!-- 분 단위 세션타임아웃 -->
+		</session-timeout>
+	</session-config>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+</web-app>
