@@ -1,0 +1,41 @@
+
+#addMoneyModal{
+	height: 300px;
+	width: 400px;
+	background-color: #B2A65B;
+}
+
+
+.addMoney-top-layer{
+/* 	height: 300px;
+	width: 400px !important;
+	background-color: #B2A65B; */
+	text-align: center;
+	margin: 0 auto;
+}
+
+.main-top-layer *{
+	font-family: "hanna";
+}
+
+#money-logo {
+	font-size: 30pt;
+	font-weight: 400;
+	color: white;
+}
+
+#currentBalance{
+	font-size : 20pt;
+	text-align: center;
+}
+
+#money{
+	margin-top : 40px;
+	margin-bottom : 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

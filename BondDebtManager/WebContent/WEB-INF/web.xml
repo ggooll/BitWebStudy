@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>BondDebtManager</display-name>
+  
+  <!-- frontController .do로 끝나는 것들 모두 관리 -->
+	<servlet>
+		<servlet-name>FrontController</servlet-name>
+		<servlet-class>kr.co.bit.bonddebt.controller.FrontController</servlet-class>
+		<!-- frontController를 init할 때 parameter를 설정하는 것 -->
+		<init-param>
+			<param-name>beanPath</param-name>
+			<param-value>C:\\Users\\bit-user\\Desktop\\Lecture\\LKC_WEB_Workspace\\BondDebtManager\\bean.properties</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FrontController</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+  
+  <welcome-file-list>
+  	<welcome-file>hello.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

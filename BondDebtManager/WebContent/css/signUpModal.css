@@ -1,0 +1,39 @@
+
+#signUpModal{
+	background-color: #2B3752;
+}
+
+#signUp-top-layer {
+	height: 450px;
+	width: 300px !important;
+	background-color: #2B3752;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+}
+
+.main-top-layer *{
+	font-family: "hanna";
+}
+
+#signUplogo {
+	margin-top : 50px;
+	margin-bottom : 30px;
+	font-size: 30pt;
+	font-weight: 400;
+	color: white;
+}
+
+.form-group{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.form-control{
+	height: 25px;
+	line-height: 25px;
+}
+
+input {
+	font-family : "hanna";
+}

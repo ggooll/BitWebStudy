@@ -40,8 +40,8 @@ public class HandlerMapping {
 					// RequestMapping에 value("uri")형태를 찾아냄
 					String uri = reqAnno.value();
 					// CtrlAndMethod(uri에 대해 어떤 컨트롤러 인스턴스의 어떤 메소드를 호출해야 할지 맵핑)
-					CtrlAndMethod ctrlAndMethod = new CtrlAndMethod(target, method);
-					mappings.put(uri, ctrlAndMethod);
+					CtrlAndMethod cam = new CtrlAndMethod(target, method);
+					mappings.put(uri, cam);
 				}
 			}
 		}

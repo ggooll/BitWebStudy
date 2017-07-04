@@ -1,0 +1,49 @@
+#groupListDiv {
+	width: 400px !important;
+	height: 1000px !important;
+	background-color: #FFFFF7;
+	float: left;
+	overflow: auto;
+}
+
+.eachGroup {
+	margin: 10px auto;
+	border: 2px solid black;
+	width: 300px;
+	height: 100px;
+}
+
+.eachGroupTitle {
+	width: inherit;
+	background-color: #2B3752;
+	height: 50px;
+}
+
+.participant {
+	width: inherit;
+	background-color: white;
+	height: 50px;
+}
+
+.titleSpan {
+	line-height: 50px;
+	font-size: 20px;
+	color: white;
+	float:left;
+	margin-left : 10px;
+}
+
+.numSpan{
+	line-height: 50px;
+	font-size: 16px;
+	color: white;
+	float:right;
+	margin-right: 10px;
+}
+
+.partSpan{
+	line-height: 50px;
+	font-size: 15px;
+	color: black;
+	margin-left:10px;
+}

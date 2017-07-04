@@ -1,0 +1,40 @@
+* {
+	font-family: hanna;
+}
+
+body {
+	background : #eee;
+}
+
+#custom-container {
+	width : 1200px;
+	margin: 0 auto;
+}
+
+#custom-section{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+#custom-footer {
+	width: 1200px; 
+	clear: both; 
+	margin: 0 auto; 
+	padding: 0;
+	height: 60px;
+	background-color : #0D1831;
+	text-align: center;
+}
+
+#content{
+	float:right; 
+	padding: 0;
+}
+
+#rookie{
+	width: 1200px;
+	min-height: 1000px !important;
+	background-color: #FFFFF7;
+	padding: 0;
+	margin: 0 auto;
+}

@@ -1,0 +1,36 @@
+/* Higher than 1200 (desktop devices)
+====================================================================== */
+@media (min-width: 0px) {
+	
+	.container-fluid-full {
+		overflow: hidden;
+		position: relative;
+		height: 100%;
+	}
+	
+	#content {
+/* 		width: 85.578% !important; */
+ 		min-width: 1020px !important;
+		padding: 5px;
+		margin: 0px 0px;
+	}
+		
+	#sidebar-left {
+		padding: 10px;
+		background: #2B3752;
+		margin-left: 0px !important;
+		position: absolute;
+		height: 100% !important;
+		width: 170px !important;
+		min-width: 170px !important;
+	}
+	
+	.sidebar-nav > ul{
+		margin: 0px;
+	}
+	
+	footer {
+		margin: 0px 0px 0px 0px;
+		padding: 10px 20px;
+	}
+}

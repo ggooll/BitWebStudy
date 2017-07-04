@@ -1,0 +1,30 @@
+#addFriendModal{
+	height: 300px;
+	width: 400px;
+	background-color: #2B3752;
+}
+
+.addFriend-top-layer{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.main-top-layer *{
+	font-family: "hanna";
+}
+
+.resultSpan{
+	color: white;
+	font-size : 20pt;
+}
+
+#main-logo {
+	font-size: 30pt;
+	font-weight: 400;
+	color: white;
+}
+
+.queryDiv{
+	height: 40px;
+	line-height: 40px;
+}

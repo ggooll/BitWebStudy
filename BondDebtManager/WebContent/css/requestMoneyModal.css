@@ -1,0 +1,24 @@
+.request-top-layer {
+	height: 270px;
+	width: 500px !important;
+	background-color: #B2A65B;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.request-top-layer *{
+	font-family: "hanna";
+}
+
+#main-logo {
+	font-size: 22pt;
+	font-weight: 400;
+	color: black;
+	margin: 50px auto 40px auto;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

@@ -1,0 +1,23 @@
+.main-top-layer {
+	height: 500px;
+	width: 300px !important;
+	background-color: #2B3752;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.main-top-layer *{
+	font-family: "hanna";
+}
+
+#main-image {
+	margin-top: 20px;
+	width:256px;
+	height: 256px;
+}
+
+#main-logo {
+	font-size: 30pt;
+	font-weight: 400;
+	color: white;
+}
