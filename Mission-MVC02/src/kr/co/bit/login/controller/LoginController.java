@@ -19,6 +19,7 @@ public class LoginController {
 	 * 
 	 * @param request
 	 * @param response
+	 * @return ModelAndView
 	 * @throws Exception
 	 */
 	@RequestMapping("/login/loginForm.do")
@@ -35,9 +36,10 @@ public class LoginController {
 	 * 
 	 * @param request
 	 * @param response
+	 * @return ModelAndView
 	 * @throws Exception
 	 */
-	@RequestMapping(value="/login/login.do")
+	@RequestMapping(value = "/login/login.do")
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		String id = request.getParameter("id");
@@ -72,7 +74,7 @@ public class LoginController {
 	 * 
 	 * @param request
 	 * @param response
-	 * @return
+	 * @return ModelAndView
 	 * @throws Exception
 	 */
 	@RequestMapping("/login/logout.do")
@@ -82,7 +84,7 @@ public class LoginController {
 		HttpSession session = request.getSession();
 		session.invalidate();
 		// session.removeAttribute("loginUser");
-		
+
 		ModelAndView mav = new ModelAndView();
 		mav.setView("redirect:" + request.getContextPath());
 		return mav;

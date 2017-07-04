@@ -28,10 +28,13 @@ public class LoginFilter implements Filter {
 
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 		Cookie cookie = new Cookie("saveUserId", id);
+		cookie.setPath("/"); // 모든 경로에서 접근 가능하도록
 
 		if (saveId != null) {
-			cookie.setMaxAge(1000000000);
+			// 아이디 저장함
+			cookie.setMaxAge(60 * 60 * 24 * 365);
 		} else {
+			// 아이디 저장안함
 			cookie.setMaxAge(0);
 		}
 
