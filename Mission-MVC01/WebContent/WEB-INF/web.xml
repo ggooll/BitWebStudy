@@ -12,7 +12,7 @@
 		<!-- frontController를 init할 때 parameter를 설정하는 것 -->
 		<init-param>
 			<param-name>beanPath</param-name>
-			<param-value>C:\\Users\\bit-user\\Desktop\\Lecture\\LKC_WEB_Workspace\\Mission-MVC01\\bean.properties</param-value>
+			<param-value>C:\\Users\\bit-user\\git\\Lecture-Web\\Mission-MVC01\\bean.properties</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
