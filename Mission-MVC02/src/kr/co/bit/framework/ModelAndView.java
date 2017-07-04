@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class ModelAndView {
 
+	// 어떤 뷰로 갈때, 공유영역에 등록시킬 공유객체
 	private String view;
 	private Map<String, Object> model;
 	

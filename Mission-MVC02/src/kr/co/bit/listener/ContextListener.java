@@ -14,36 +14,25 @@ import kr.co.bit.login.service.LoginService;
 public class ContextListener implements ServletContextListener {
 
 	@Override
-	public void contextDestroyed(ServletContextEvent event) {
-		System.out.println("contextDestroyed...");
-	}
-
-	@Override
 	public void contextInitialized(ServletContextEvent event) {
 
 		System.out.println("contextInitialized....");
-		
+
+		// 서블릿 공유영역에 필요한 객체를 등록시켜두고
+		// 필요할때마다 불러 씀 (코드상으로 객체를 계속 생성하지 않음)
 		ServletContext sc = event.getServletContext();
-		
-		BoardDAO dao = new BoardDAO();
-//		sc.setAttribute("boardDao", dao);
-		
-		BoardService service = new BoardService(dao);
+		BoardDAO boardDAO = new BoardDAO();
+		BoardService service = new BoardService(boardDAO);
 		sc.setAttribute("boardService", service);
-		
+
 		LoginDAO loginDAO = new LoginDAO();
 		LoginService loginService = new LoginService(loginDAO);
 		sc.setAttribute("loginService", loginService);
 	}
 
-	
+	@Override
+	public void contextDestroyed(ServletContextEvent event) {
+		System.out.println("contextDestroyed...");
+	}
+
 }
-
-
-
-
-
-
-
-
-

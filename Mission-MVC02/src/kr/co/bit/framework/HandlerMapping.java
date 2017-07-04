@@ -17,28 +17,29 @@ public class HandlerMapping {
 	public HandlerMapping(String ctrlNames) throws Exception {
 		
 		mappings = new HashMap<>();
-		
 		String[] ctrls = ctrlNames.split("\\|");
 		
+		// 등록된 모든 컨트롤러에 대해서 객체를 생성하고(target)
+		// requestMapping(uri)와 메소드를 맵핑시킴
 		for(String ctrl : ctrls) {
 			Class<?> clz = Class.forName(ctrl.trim());
 			Object target = clz.newInstance();
 			System.out.println("target : " + target);
 			
+			// public만? (상속받은 것 포함)
 			Method[] methods = clz.getMethods();
-//			Method[] methods = clz.getDeclaredMethods();
+			
+			// 내가 정의해 둔 메소드들만(private public ...)
+			// Method[] methods = clz.getDeclaredMethods();
+
 			for(Method method : methods) {
-//				System.out.println(method);
-				
-				RequestMapping reqAnno 
-						= method.getAnnotation(RequestMapping.class);
-//				System.out.println("reqAnno : " + reqAnno);
+				// RequestMapping 어노테이션 등록 된 메소드만 찾음
+				RequestMapping reqAnno = method.getAnnotation(RequestMapping.class);
 				
 				if(reqAnno != null) {
+					// RequestMapping에 value("uri")형태를 찾아냄
 					String uri = reqAnno.value();
-//					System.out.println("uri : " + uri);
-//					System.out.println("method : " + method);
-					
+					// CtrlAndMethod(uri에 대해 어떤 컨트롤러 인스턴스의 어떤 메소드를 호출해야 할지 맵핑)
 					CtrlAndMethod cam = new CtrlAndMethod(target, method);
 					mappings.put(uri, cam);
 				}
@@ -46,6 +47,11 @@ public class HandlerMapping {
 		}
 	}
 	
+	/**
+	 * 맵핑 된 CtrlAndMethod를 리턴함
+	 * @param uri
+	 * @return
+	 */
 	public CtrlAndMethod getCtrlAndMethod(String uri) {
 		return mappings.get(uri);
 	}

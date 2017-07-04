@@ -15,9 +15,8 @@ public class BoardService {
 
 	public List<BoardVO> selectAllBoard() {
 
-		List<BoardVO> list = boardDAO.selectAllBoard();
+		List<BoardVO> list = boardDAO.selectAll();
 
 		return list;
-
 	}
 }

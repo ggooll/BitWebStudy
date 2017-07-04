@@ -1,14 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE>
 <html>
 <head>
+<c:set var="context" value="${ pageContext.request.contextPath }"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="${ pageContext.request.contextPath }/board/list.do">게시판</a><br/>
-	<a href="">로그인</a><br/>
-	<a href="">로그아웃</a><br/>
+	<a href="${context}/board/list.do">게시판</a><br/>
+	<c:choose>
+		<c:when test="${ empty loginUser }">
+			<a href="${context}/login/loginForm.do">로그인</a><br/>
+		</c:when>
+		<c:otherwise>
+			<a href="${context}/login/logout.do">로그아웃</a><br/>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>

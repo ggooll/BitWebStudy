@@ -3,59 +3,41 @@ package kr.co.bit.board.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import kr.co.bit.board.vo.BoardFileVO;
 import kr.co.bit.board.vo.BoardVO;
 import kr.co.bit.util.DBUtil;
-import kr.co.bit.util.JDBCClose;
 
 public class BoardDAO {
 
-	/**
-	 * ��ü �Խù� ��� ��ȸ�ϴ� ���
-	 */
-	public List<BoardVO> selectAllBoard() {
+	public List<BoardVO> selectAll() {
+		List<BoardVO> boardList = new ArrayList<BoardVO>();
+		StringBuilder sql = new StringBuilder();
+		sql.append("SELECT NO, TITLE, WRITER, to_char(REG_DATE, 'yyyy-mm-dd') as REG_DATE ");
+		sql.append(" FROM T_BOARD ");
+		sql.append(" ORDER BY NO DESC");
 
-		List<BoardVO> list = new ArrayList<>();
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-
-		try {
-			conn = DBUtil.getConnection();
-			StringBuilder sql = new StringBuilder();
-			sql.append("SELECT NO, TITLE, WRITER, ");
-			sql.append(" TO_CHAR(REG_DATE, 'YYYY-MM-DD') AS REG_DATE ");
-			sql.append(" FROM T_BOARD ");
-			sql.append(" ORDER BY NO DESC ");
-
-			pstmt = conn.prepareStatement(sql.toString());
-			rs = pstmt.executeQuery();
+		try (Connection conn = DBUtil.getConnection();
+				PreparedStatement pst = conn.prepareStatement(sql.toString());
+				ResultSet rs = pst.executeQuery();) {
 
 			while (rs.next()) {
-				int no = rs.getInt("NO");
-				String title = rs.getString("TITLE");
-				String writer = rs.getString("WRITER");
-				String regDate = rs.getString("REG_DATE");
-
 				BoardVO board = new BoardVO();
-				board.setNo(no);
-				board.setTitle(title);
-				board.setWriter(writer);
-				board.setRegDate(regDate);
-
-				list.add(board);
+				board.setNo(rs.getInt("NO"));
+				board.setTitle(rs.getString("TITLE"));
+				board.setWriter(rs.getString("WRITER"));
+				board.setRegDate(rs.getString("REG_DATE"));
+				boardList.add(board);
 			}
 
-		} catch (Exception e) {
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
 			e.printStackTrace();
-		} finally {
-			DBUtil.closeConnect(conn, pstmt, rs);
 		}
-
-		return list;
+		return boardList;
 	}
 
 	public void insertBoard(BoardVO board) {
