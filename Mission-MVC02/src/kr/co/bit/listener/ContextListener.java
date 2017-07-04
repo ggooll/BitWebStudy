@@ -20,6 +20,7 @@ public class ContextListener implements ServletContextListener {
 
 		// 서블릿 공유영역에 필요한 객체를 등록시켜두고
 		// 필요할때마다 불러 씀 (코드상으로 객체를 계속 생성하지 않음)
+		// 한 어플리케이션 내에서 싱글턴 개념이 됨
 		ServletContext sc = event.getServletContext();
 		BoardDAO boardDAO = new BoardDAO();
 		BoardService service = new BoardService(boardDAO);

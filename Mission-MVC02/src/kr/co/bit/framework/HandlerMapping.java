@@ -14,21 +14,21 @@ public class HandlerMapping {
 	 * kr.co.bit.board.controller.BoardController|
 	   kr.co.bit.login.controller.LoginController
 	 */
-	public HandlerMapping(String ctrlNames) throws Exception {
+	public HandlerMapping(String controllerNames) throws Exception {
 		
 		mappings = new HashMap<>();
-		String[] ctrls = ctrlNames.split("\\|");
+		String[] controllers = controllerNames.split("\\|");
 		
 		// 등록된 모든 컨트롤러에 대해서 객체를 생성하고(target)
-		// requestMapping(uri)와 메소드를 맵핑시킴
-		for(String ctrl : ctrls) {
-			Class<?> clz = Class.forName(ctrl.trim());
-			Object target = clz.newInstance();
+		// requestMapping(uri)에 대한 어떤컨트롤러의 어떤메소드 수행을 맵핑시킴
+		for(String controller : controllers) {
+			Class<?> clazz = Class.forName(controller.trim());
+			Object target = clazz.newInstance();
 			System.out.println("target : " + target);
 			
 			// public만? (상속받은 것 포함)
-			Method[] methods = clz.getMethods();
-			
+			Method[] methods = clazz.getMethods();
+
 			// 내가 정의해 둔 메소드들만(private public ...)
 			// Method[] methods = clz.getDeclaredMethods();
 
@@ -40,8 +40,8 @@ public class HandlerMapping {
 					// RequestMapping에 value("uri")형태를 찾아냄
 					String uri = reqAnno.value();
 					// CtrlAndMethod(uri에 대해 어떤 컨트롤러 인스턴스의 어떤 메소드를 호출해야 할지 맵핑)
-					CtrlAndMethod cam = new CtrlAndMethod(target, method);
-					mappings.put(uri, cam);
+					CtrlAndMethod ctrlAndMethod = new CtrlAndMethod(target, method);
+					mappings.put(uri, ctrlAndMethod);
 				}
 			}
 		}
@@ -57,19 +57,3 @@ public class HandlerMapping {
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

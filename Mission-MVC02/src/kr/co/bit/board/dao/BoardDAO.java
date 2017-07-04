@@ -69,7 +69,7 @@ public class BoardDAO {
 
 		StringBuilder sql = new StringBuilder();
 		sql.append("SELECT NO, TITLE, WRITER, CONTENT, VIEW_CNT, ");
-		sql.append(" TO_CHAR(REG_DATE, 'YYYY-MM-DD') AS REG_DATE ");
+		sql.append(" TO_CHAR(REG_DATE, 'yyyy-mm-dd') AS REG_DATE ");
 		sql.append(" FROM T_BOARD ");
 		sql.append(" WHERE NO = ? ");
 
